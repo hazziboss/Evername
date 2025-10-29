@@ -1,0 +1,216 @@
+{% extends "base.html" %}
+
+{% block title %}Delegation Preview - EverName{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1 class="card-title">👥 Delegation & Legacy Status</h1>
+            <p class="card-subtitle">Preview of your legacy planning and delegate assignments</p>
+        </div>
+
+        <!-- Status Overview -->
+        <div class="alert alert-success mb-4">
+            <div class="flex" style="justify-content: space-between; align-items: center;">
+                <div>
+                    <h3 style="margin-bottom: 0.5rem;">✅ Legacy Plan Active</h3>
+                    <p style="margin: 0; opacity: 0.9;">Your legacy plan is configured and locked</p>
+                </div>
+                <span class="badge badge-success" style="font-size: 1rem; padding: 0.5rem 1rem;">LOCKED</span>
+            </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="stats-grid mb-4">
+            <div class="stat-card">
+                <div class="stat-value">3</div>
+                <div class="stat-label">Active Delegates</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">180</div>
+                <div class="stat-label">Inactivity Threshold (days)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">45</div>
+                <div class="stat-label">Grace Period (days)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">100%</div>
+                <div class="stat-label">Permissions Allocated</div>
+            </div>
+        </div>
+
+        <!-- Delegate Summary -->
+        <div class="card mb-4" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1.5rem;">👨‍👩‍👧‍👦 Delegate Overview</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="flex" style="justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <h4 style="margin: 0;">Primary Delegate</h4>
+                        <span class="badge badge-success">Active</span>
+                    </div>
+                    <p style="font-weight: 600; margin-bottom: 0.5rem;">Sarah Johnson</p>
+                    <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 0.5rem;">sarah.ever</p>
+                    <div class="flex" style="justify-content: space-between; margin-top: 1rem;">
+                        <span class="text-muted">Ownership:</span>
+                        <span style="font-weight: 600; color: var(--primary-light);">50%</span>
+                    </div>
+                    <div class="flex" style="justify-content: space-between;">
+                        <span class="text-muted">Permissions:</span>
+                        <span style="font-weight: 600; color: var(--success-color);">Full Access</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="flex" style="justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <h4 style="margin: 0;">Secondary Delegate</h4>
+                        <span class="badge badge-primary">Active</span>
+                    </div>
+                    <p style="font-weight: 600; margin-bottom: 0.5rem;">Michael Chen</p>
+                    <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 0.5rem;">mchen.ever</p>
+                    <div class="flex" style="justify-content: space-between; margin-top: 1rem;">
+                        <span class="text-muted">Ownership:</span>
+                        <span style="font-weight: 600; color: var(--primary-light);">30%</span>
+                    </div>
+                    <div class="flex" style="justify-content: space-between;">
+                        <span class="text-muted">Permissions:</span>
+                        <span style="font-weight: 600; color: var(--success-color);">Manage Only</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="flex" style="justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <h4 style="margin: 0;">Tertiary Delegate</h4>
+                        <span class="badge badge-primary">Active</span>
+                    </div>
+                    <p style="font-weight: 600; margin-bottom: 0.5rem;">Emily Rodriguez</p>
+                    <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 0.5rem;">emily.ever</p>
+                    <div class="flex" style="justify-content: space-between; margin-top: 1rem;">
+                        <span class="text-muted">Ownership:</span>
+                        <span style="font-weight: 600; color: var(--primary-light);">20%</span>
+                    </div>
+                    <div class="flex" style="justify-content: space-between;">
+                        <span class="text-muted">Permissions:</span>
+                        <span style="font-weight: 600; color: var(--warning-color);">View Only</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Asset Allocation -->
+        <div class="card mb-4" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1.5rem;">📊 Asset Allocation Preview</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Domain/Asset</th>
+                            <th>Primary (50%)</th>
+                            <th>Secondary (30%)</th>
+                            <th>Tertiary (20%)</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight: 600;">johndoe.ever</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                            <td><span class="badge badge-success">Allocated</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600;">jdoe.ever</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                            <td>❌</td>
+                            <td><span class="badge badge-success">Allocated</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600;">john-doe.ever</td>
+                            <td>✅</td>
+                            <td>❌</td>
+                            <td>❌</td>
+                            <td><span class="badge badge-success">Allocated</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600;">Linked Wallets (7)</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                            <td><span class="badge badge-success">Allocated</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600;">NFT Collection</td>
+                            <td>✅</td>
+                            <td>❌</td>
+                            <td>❌</td>
+                            <td><span class="badge badge-success">Allocated</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Liveness Status -->
+        <div class="card mb-4" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1.5rem;">💚 Liveness Monitoring</h3>
+            <div class="stats-grid">
+                <div>
+                    <label class="form-label">Last Activity</label>
+                    <p style="font-size: 1.25rem; font-weight: 600; color: var(--success-color);">2 hours ago</p>
+                </div>
+                <div>
+                    <label class="form-label">Days Since Check-in</label>
+                    <p style="font-size: 1.25rem; font-weight: 600; color: var(--success-color);">0 / 180</p>
+                </div>
+                <div>
+                    <label class="form-label">Monitoring Status</label>
+                    <p style="font-size: 1.25rem; font-weight: 600; color: var(--success-color);">Active</p>
+                </div>
+                <div>
+                    <label class="form-label">Next Check Required</label>
+                    <p style="font-size: 1.25rem; font-weight: 600; color: var(--text-secondary);">In 178 days</p>
+                </div>
+            </div>
+            <div class="progress-container mt-3">
+                <div class="progress-bar" style="width: 1%; background: var(--success-color);"></div>
+            </div>
+            <p class="text-muted mt-2" style="font-size: 0.9rem;">1% of inactivity threshold reached</p>
+        </div>
+
+        <!-- Legacy Documents -->
+        <div class="card" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1.5rem;">📄 Legacy Documents</h3>
+            <div class="flex" style="justify-content: space-between; align-items: center; padding: 1rem; border: 1px solid var(--border-color); border-radius: 0.5rem; margin-bottom: 1rem;">
+                <div class="flex" style="gap: 1rem; align-items: center;">
+                    <span style="font-size: 2rem;">🎥</span>
+                    <div>
+                        <p style="font-weight: 600; margin-bottom: 0.25rem;">Video Will</p>
+                        <p class="text-muted" style="font-size: 0.9rem;">Uploaded: Jan 15, 2024 • 4:32 duration</p>
+                    </div>
+                </div>
+                <span class="badge badge-success">Encrypted</span>
+            </div>
+            <div class="flex" style="justify-content: space-between; align-items: center; padding: 1rem; border: 1px solid var(--border-color); border-radius: 0.5rem;">
+                <div class="flex" style="gap: 1rem; align-items: center;">
+                    <span style="font-size: 2rem;">📋</span>
+                    <div>
+                        <p style="font-weight: 600; margin-bottom: 0.25rem;">Written Instructions</p>
+                        <p class="text-muted" style="font-size: 0.9rem;">Last updated: Feb 20, 2024</p>
+                    </div>
+                </div>
+                <span class="badge badge-success">Encrypted</span>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex gap-2 mt-4">
+            <a href="/legacy/overview" class="btn btn-primary">View Full Legacy Plan</a>
+            <a href="/legacy/delegate-tree" class="btn btn-secondary">View Delegate Tree</a>
+            <button class="btn btn-outline" data-action="check-in">Perform Check-In</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

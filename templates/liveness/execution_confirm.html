@@ -1,0 +1,181 @@
+{% extends "base.html" %}
+
+{% block title %}Legacy Execution - EverName{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card" style="border: 3px solid var(--danger-color);">
+        <div style="background: rgba(239, 68, 68, 0.1); padding: 3rem; text-align: center; border-radius: 1rem 1rem 0 0;">
+            <div style="font-size: 6rem; margin-bottom: 1rem;">🏛️</div>
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--danger-color);">Legacy Execution in Progress</h1>
+            <p style="font-size: 1.2rem; color: var(--text-secondary);">The grace period has expired and asset transfer has been initiated</p>
+        </div>
+
+        <div class="card-header">
+            <h2 class="card-title">Asset Transfer Status</h2>
+            <p class="card-subtitle">Your digital assets are being transferred to designated delegates</p>
+        </div>
+
+        <!-- Execution Timeline -->
+        <div class="card mb-4" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1.5rem;">⏱️ Execution Timeline</h3>
+            <div style="position: relative; padding-left: 3rem;">
+                <!-- Completed Steps -->
+                <div style="position: relative; margin-bottom: 2rem;">
+                    <div style="position: absolute; left: -3rem; width: 40px; height: 40px; background: var(--success-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">✓</div>
+                    <div style="position: absolute; left: -1.5rem; top: 40px; width: 2px; height: calc(100% + 2rem); background: var(--success-color);"></div>
+                    <strong style="color: var(--success-color);">Inactivity Threshold Reached</strong>
+                    <p class="text-muted" style="margin: 0.5rem 0 0;">March 1, 2024 - 180 days of inactivity detected</p>
+                </div>
+
+                <div style="position: relative; margin-bottom: 2rem;">
+                    <div style="position: absolute; left: -3rem; width: 40px; height: 40px; background: var(--success-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">✓</div>
+                    <div style="position: absolute; left: -1.5rem; top: 40px; width: 2px; height: calc(100% + 2rem); background: var(--success-color);"></div>
+                    <strong style="color: var(--success-color);">Grace Period Initiated</strong>
+                    <p class="text-muted" style="margin: 0.5rem 0 0;">March 1, 2024 - 45-day grace period started</p>
+                </div>
+
+                <div style="position: relative; margin-bottom: 2rem;">
+                    <div style="position: absolute; left: -3rem; width: 40px; height: 40px; background: var(--success-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">✓</div>
+                    <div style="position: absolute; left: -1.5rem; top: 40px; width: 2px; height: calc(100% + 2rem); background: var(--warning-color);"></div>
+                    <strong style="color: var(--success-color);">Delegates Notified</strong>
+                    <p class="text-muted" style="margin: 0.5rem 0 0;">Multiple notifications sent to all delegates</p>
+                </div>
+
+                <div style="position: relative; margin-bottom: 2rem;">
+                    <div style="position: absolute; left: -3rem; width: 40px; height: 40px; background: var(--warning-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">⏳</div>
+                    <div style="position: absolute; left: -1.5rem; top: 40px; width: 2px; height: calc(100% + 2rem); background: var(--border-color);"></div>
+                    <strong style="color: var(--warning-color);">Grace Period Expired</strong>
+                    <p class="text-muted" style="margin: 0.5rem 0 0;">April 15, 2024 - No response received</p>
+                </div>
+
+                <div style="position: relative; margin-bottom: 2rem;">
+                    <div style="position: absolute; left: -3rem; width: 40px; height: 40px; background: var(--warning-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">⏳</div>
+                    <strong style="color: var(--warning-color);">Legacy Execution Started (Current)</strong>
+                    <p class="text-muted" style="margin: 0.5rem 0 0;">April 15, 2024 at 3:30 PM - Asset transfer initiated</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Transfer Progress -->
+        <div class="card mb-4" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1.5rem;">📦 Asset Transfer Progress</h3>
+
+            <!-- Domains -->
+            <div class="card mb-3" style="background: var(--bg-card);">
+                <div class="flex" style="justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <div>
+                        <strong>Domains (3)</strong>
+                        <p class="text-muted" style="margin: 0; font-size: 0.9rem;">johndoe.ever, jdoe.ever, john-doe.ever</p>
+                    </div>
+                    <span class="badge badge-warning">In Progress</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 33%; background: var(--warning-color);"></div>
+                </div>
+                <p class="text-muted mt-2" style="font-size: 0.9rem;">Transferring to delegates...</p>
+            </div>
+
+            <!-- Wallets -->
+            <div class="card mb-3" style="background: var(--bg-card);">
+                <div class="flex" style="justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <div>
+                        <strong>Wallet Access (12 wallets)</strong>
+                        <p class="text-muted" style="margin: 0; font-size: 0.9rem;">Credentials for 7 blockchain networks</p>
+                    </div>
+                    <span class="badge badge-primary">Pending</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 0%; background: var(--text-muted);"></div>
+                </div>
+                <p class="text-muted mt-2" style="font-size: 0.9rem;">Awaiting domain transfer completion</p>
+            </div>
+
+            <!-- NFTs -->
+            <div class="card mb-3" style="background: var(--bg-card);">
+                <div class="flex" style="justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <div>
+                        <strong>NFT Collection (47 NFTs)</strong>
+                        <p class="text-muted" style="margin: 0; font-size: 0.9rem;">Digital collectibles and assets</p>
+                    </div>
+                    <span class="badge badge-primary">Pending</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 0%; background: var(--text-muted);"></div>
+                </div>
+                <p class="text-muted mt-2" style="font-size: 0.9rem;">Transfer scheduled</p>
+            </div>
+
+            <!-- Documents -->
+            <div class="card" style="background: var(--bg-card);">
+                <div class="flex" style="justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <div>
+                        <strong>Legacy Documents</strong>
+                        <p class="text-muted" style="margin: 0; font-size: 0.9rem;">Video will and written instructions</p>
+                    </div>
+                    <span class="badge badge-primary">Pending</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 0%; background: var(--text-muted);"></div>
+                </div>
+                <p class="text-muted mt-2" style="font-size: 0.9rem;">Will be decrypted for delegates</p>
+            </div>
+        </div>
+
+        <!-- Delegate Actions -->
+        <div class="card mb-4" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1.5rem;">👥 Delegate Status</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Delegate</th>
+                            <th>Allocation</th>
+                            <th>Assets Received</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Sarah Johnson</strong><br>
+                                <span class="text-muted" style="font-size: 0.85rem;">sarah.ever</span>
+                            </td>
+                            <td style="font-weight: 700; color: var(--success-color);">50%</td>
+                            <td>Domains (1/3)</td>
+                            <td><span class="badge badge-warning">Receiving</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Michael Chen</strong><br>
+                                <span class="text-muted" style="font-size: 0.85rem;">mchen.ever</span>
+                            </td>
+                            <td style="font-weight: 700; color: var(--primary-light);">30%</td>
+                            <td>Pending</td>
+                            <td><span class="badge badge-primary">Queued</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Emily Rodriguez</strong><br>
+                                <span class="text-muted" style="font-size: 0.85rem;">emily.ever</span>
+                            </td>
+                            <td style="font-weight: 700; color: var(--text-muted);">20%</td>
+                            <td>Pending</td>
+                            <td><span class="badge badge-primary">Queued</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Emergency Recovery -->
+        <div class="card" style="background: rgba(239, 68, 68, 0.1); border: 2px solid var(--danger-color);">
+            <h3 style="margin-bottom: 1rem; color: var(--danger-color);">⚠️ Can This Be Stopped?</h3>
+            <p class="text-muted" style="margin-bottom: 1.5rem;">
+                If you're seeing this and you're the account owner, you can still halt the execution process using emergency recovery. This requires multi-factor verification and may take up to 24 hours to process.
+            </p>
+            <a href="/emergency-recovery" class="btn btn-danger btn-large">Emergency Recovery</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

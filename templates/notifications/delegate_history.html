@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+
+{% block title %}Delegate Notification History - EverName{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1 class="card-title">📜 Delegate Notification History</h1>
+            <p class="card-subtitle">Read-only log of all delegate-related notifications</p>
+        </div>
+
+        <!-- Filter Options -->
+        <div class="card mb-4" style="background: var(--bg-dark);">
+            <div class="flex gap-3" style="flex-wrap: wrap;">
+                <div class="form-group" style="flex: 1; min-width: 200px;">
+                    <label class="form-label">Filter by Delegate</label>
+                    <select class="form-select">
+                        <option>All Delegates</option>
+                        <option>Sarah Johnson (Primary)</option>
+                        <option>Michael Chen (Secondary)</option>
+                        <option>Emily Rodriguez (Tertiary)</option>
+                    </select>
+                </div>
+                <div class="form-group" style="flex: 1; min-width: 200px;">
+                    <label class="form-label">Notification Type</label>
+                    <select class="form-select">
+                        <option>All Types</option>
+                        <option>Delegate Added</option>
+                        <option>Permissions Updated</option>
+                        <option>Liveness Alert</option>
+                        <option>Grace Period</option>
+                        <option>Legacy Execution</option>
+                    </select>
+                </div>
+                <div class="form-group" style="flex: 1; min-width: 200px;">
+                    <label class="form-label">Date Range</label>
+                    <select class="form-select">
+                        <option>Last 30 Days</option>
+                        <option>Last 90 Days</option>
+                        <option>Last 6 Months</option>
+                        <option>Last Year</option>
+                        <option>All Time</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-grid mb-4">
+            <div class="stat-card">
+                <div class="stat-value">47</div>
+                <div class="stat-label">Total Notifications</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">3</div>
+                <div class="stat-label">Active Delegates</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">12</div>
+                <div class="stat-label">This Month</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">100%</div>
+                <div class="stat-label">Delivery Rate</div>
+            </div>
+        </div>
+
+        <!-- Notification Timeline -->
+        <div class="card" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1.5rem;">📋 Notification Timeline</h3>
+
+            <!-- Notification Entry -->
+            <div style="border-left: 3px solid var(--success-color); padding-left: 1.5rem; margin-bottom: 2rem; position: relative;">
+                <div style="position: absolute; left: -8px; top: 0; width: 12px; height: 12px; background: var(--success-color); border-radius: 50%;"></div>
+                <div class="flex" style="justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                    <h4 style="margin: 0; color: var(--success-color);">✅ Delegate Added Successfully</h4>
+                    <span class="text-muted" style="font-size: 0.9rem;">2 weeks ago</span>
+                </div>
+                <p style="margin-bottom: 0.5rem;"><strong>Delegate:</strong> Emily Rodriguez (emily.ever)</p>
+                <p style="margin-bottom: 0.5rem;"><strong>Type:</strong> Tertiary Delegate</p>
+                <p style="margin-bottom: 0.5rem;"><strong>Notification Sent:</strong> Feb 15, 2024 at 2:30 PM</p>
+                <p style="margin-bottom: 0.5rem;"><strong>Delivery Status:</strong> <span class="badge badge-success">Delivered</span></p>
+                <p class="text-muted" style="font-size: 0.9rem;">Emily was notified via email about being added as a tertiary delegate with view-only permissions (20% allocation).</p>
+            </div>
+
+            <div style="border-left: 3px solid var(--primary-color); padding-left: 1.5rem; margin-bottom: 2rem; position: relative;">
+                <div style="position: absolute; left: -8px; top: 0; width: 12px; height: 12px; background: var(--primary-color); border-radius: 50%;"></div>
+                <div class="flex" style="justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                    <h4 style="margin: 0; color: var(--primary-light);">🔄 Permissions Updated</h4>
+                    <span class="text-muted" style="font-size: 0.9rem;">3 weeks ago</span>
+                </div>
+                <p style="margin-bottom: 0.5rem;"><strong>Delegate:</strong> Michael Chen (mchen.ever)</p>
+                <p style="margin-bottom: 0.5rem;"><strong>Change:</strong> Allocation increased from 25% to 30%</p>
+                <p style="margin-bottom: 0.5rem;"><strong>Notification Sent:</strong> Feb 8, 2024 at 10:15 AM</p>
+                <p style="margin-bottom: 0.5rem;"><strong>Delivery Status:</strong> <span class="badge badge-success">Delivered</span></p>
+                <p class="text-muted" style="font-size: 0.9rem;">Michael was notified about the permission allocation update via email and SMS.</p>
+            </div>
+
+            <div style="border-left: 3px solid var(--warning-color); padding-left: 1.5rem; margin-bottom: 2rem; position: relative;">
+                <div style="position: absolute; left: -8px; top: 0; width: 12px; height: 12px; background: var(--warning-color); border-radius: 50%;"></div>
+                <div class="flex" style="justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                    <h4 style="margin: 0; color: var(--warning-color);">⚠️ Liveness Check Reminder</h4>
+                    <span class="text-muted" style="font-size: 0.9rem;">1 month ago</span>
+                </div>
+                <p style="margin-bottom: 0.5rem;"><strong>Delegates Notified:</strong> All (3)</p>
+                <p style="margin-bottom: 0.5rem;"><strong>Reason:</strong> Routine liveness check notification</p>
+                <p style="margin-bottom: 0.5rem;"><strong>Notification Sent:</strong> Jan 28, 2024 at 9:00 AM</p>
+                <p style="margin-bottom: 0.5rem;"><strong>Delivery Status:</strong> <span class="badge badge-success">All Delivered</span></p>
+                <p class="text-muted" style="font-size: 0.9rem;">All delegates were informed about the routine liveness monitoring status update.</p>
+            </div>
+
+            <div style="border-left: 3px solid var(--success-color); padding-left: 1.5rem; margin-bottom: 2rem; position: relative;">
+                <div style="position: absolute; left: -8px; top: 0; width: 12px; height: 12px; background: var(--success-color); border-radius: 50%;"></div>
+                <div class="flex" style="justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                    <h4 style="margin: 0; color: var(--success-color);">✅ Legacy Plan Updated</h4>
+                    <span class="text-muted" style="font-size: 0.9rem;">2 months ago</span>
+                </div>
+                <p style="margin-bottom: 0.5rem;"><strong>Delegates Notified:</strong> Sarah Johnson, Michael Chen</p>
+                <p style="margin-bottom: 0.5rem;"><strong>Update:</strong> Video will uploaded and encrypted</p>
+                <p style="margin-bottom: 0.5rem;"><strong>Notification Sent:</strong> Dec 20, 2023 at 3:45 PM</p>
+                <p style="margin-bottom: 0.5rem;"><strong>Delivery Status:</strong> <span class="badge badge-success">All Delivered</span></p>
+                <p class="text-muted" style="font-size: 0.9rem;">Primary and secondary delegates were notified about the legacy plan update.</p>
+            </div>
+
+            <div style="border-left: 3px solid var(--success-color); padding-left: 1.5rem; margin-bottom: 2rem; position: relative;">
+                <div style="position: absolute; left: -8px; top: 0; width: 12px; height: 12px; background: var(--success-color); border-radius: 50%;"></div>
+                <div class="flex" style="justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                    <h4 style="margin: 0; color: var(--success-color);">✅ Delegate Accepted Role</h4>
+                    <span class="text-muted" style="font-size: 0.9rem;">3 months ago</span>
+                </div>
+                <p style="margin-bottom: 0.5rem;"><strong>Delegate:</strong> Michael Chen (mchen.ever)</p>
+                <p style="margin-bottom: 0.5rem;"><strong>Action:</strong> Accepted secondary delegate role</p>
+                <p style="margin-bottom: 0.5rem;"><strong>Notification Sent:</strong> Nov 10, 2023 at 11:20 AM</p>
+                <p style="margin-bottom: 0.5rem;"><strong>Delivery Status:</strong> <span class="badge badge-success">Delivered</span></p>
+                <p class="text-muted" style="font-size: 0.9rem;">Michael accepted the delegation request and confirmed his role as secondary delegate.</p>
+            </div>
+
+            <div style="border-left: 3px solid var(--success-color); padding-left: 1.5rem; margin-bottom: 2rem; position: relative;">
+                <div style="position: absolute; left: -8px; top: 0; width: 12px; height: 12px; background: var(--success-color); border-radius: 50%;"></div>
+                <div class="flex" style="justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                    <h4 style="margin: 0; color: var(--success-color);">✅ Delegate Added Successfully</h4>
+                    <span class="text-muted" style="font-size: 0.9rem;">3 months ago</span>
+                </div>
+                <p style="margin-bottom: 0.5rem;"><strong>Delegate:</strong> Michael Chen (mchen.ever)</p>
+                <p style="margin-bottom: 0.5rem;"><strong>Type:</strong> Secondary Delegate</p>
+                <p style="margin-bottom: 0.5rem;"><strong>Notification Sent:</strong> Nov 5, 2023 at 4:15 PM</p>
+                <p style="margin-bottom: 0.5rem;"><strong>Delivery Status:</strong> <span class="badge badge-success">Delivered</span></p>
+                <p class="text-muted" style="font-size: 0.9rem;">Michael was invited as a secondary delegate with management permissions (25% allocation at that time).</p>
+            </div>
+
+            <div style="border-left: 3px solid var(--success-color); padding-left: 1.5rem; position: relative;">
+                <div style="position: absolute; left: -8px; top: 0; width: 12px; height: 12px; background: var(--success-color); border-radius: 50%;"></div>
+                <div class="flex" style="justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                    <h4 style="margin: 0; color: var(--success-color);">✅ Legacy Plan Created</h4>
+                    <span class="text-muted" style="font-size: 0.9rem;">4 months ago</span>
+                </div>
+                <p style="margin-bottom: 0.5rem;"><strong>Delegate:</strong> Sarah Johnson (sarah.ever)</p>
+                <p style="margin-bottom: 0.5rem;"><strong>Type:</strong> Primary Delegate</p>
+                <p style="margin-bottom: 0.5rem;"><strong>Notification Sent:</strong> Oct 15, 2023 at 1:00 PM</p>
+                <p style="margin-bottom: 0.5rem;"><strong>Delivery Status:</strong> <span class="badge badge-success">Delivered</span></p>
+                <p class="text-muted" style="font-size: 0.9rem;">Sarah was designated as the primary delegate when the legacy plan was first created.</p>
+            </div>
+        </div>
+
+        <!-- Export Options -->
+        <div class="flex gap-2 mt-4">
+            <button class="btn btn-primary" data-action="export-history">Export History (CSV)</button>
+            <button class="btn btn-secondary" data-action="print-history">Print History</button>
+            <a href="/notification-settings" class="btn btn-outline">Back to Settings</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

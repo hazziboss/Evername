@@ -1,0 +1,212 @@
+{% extends "base.html" %}
+
+{% block title %}Social Linking - EverName{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1 class="card-title">🌐 Social & Contact Linking</h1>
+            <p class="card-subtitle">Connect your social profiles to johndoe.ever</p>
+        </div>
+
+        <!-- Connected Socials -->
+        <div class="stats-grid mb-4">
+            <div class="stat-card">
+                <div class="stat-value">5</div>
+                <div class="stat-label">Connected Profiles</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">3</div>
+                <div class="stat-label">Verified</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">2</div>
+                <div class="stat-label">Pending</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">100%</div>
+                <div class="stat-label">Profile Complete</div>
+            </div>
+        </div>
+
+        <!-- Social Platforms -->
+        <div class="card mb-4" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1.5rem;">📱 Social Media Platforms</h3>
+
+            <!-- Twitter -->
+            <div class="card mb-3">
+                <div class="flex" style="justify-content: space-between; align-items: center;">
+                    <div class="flex" style="align-items: center; gap: 1rem; flex: 1;">
+                        <div style="font-size: 2rem;">🐦</div>
+                        <div style="flex: 1;">
+                            <h4 style="margin-bottom: 0.25rem;">Twitter / X</h4>
+                            <p class="text-muted" style="font-size: 0.9rem; margin: 0;">@johndoe</p>
+                        </div>
+                    </div>
+                    <div class="flex" style="gap: 1rem; align-items: center;">
+                        <span class="badge badge-success">Verified</span>
+                        <button class="btn btn-secondary" data-action="edit">Edit</button>
+                        <button class="btn btn-danger" data-action="remove">Remove</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GitHub -->
+            <div class="card mb-3">
+                <div class="flex" style="justify-content: space-between; align-items: center;">
+                    <div class="flex" style="align-items: center; gap: 1rem; flex: 1;">
+                        <div style="font-size: 2rem;">💻</div>
+                        <div style="flex: 1;">
+                            <h4 style="margin-bottom: 0.25rem;">GitHub</h4>
+                            <p class="text-muted" style="font-size: 0.9rem; margin: 0;">github.com/johndoe</p>
+                        </div>
+                    </div>
+                    <div class="flex" style="gap: 1rem; align-items: center;">
+                        <span class="badge badge-success">Verified</span>
+                        <button class="btn btn-secondary" data-action="edit">Edit</button>
+                        <button class="btn btn-danger" data-action="remove">Remove</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LinkedIn -->
+            <div class="card mb-3">
+                <div class="flex" style="justify-content: space-between; align-items: center;">
+                    <div class="flex" style="align-items: center; gap: 1rem; flex: 1;">
+                        <div style="font-size: 2rem;">💼</div>
+                        <div style="flex: 1;">
+                            <h4 style="margin-bottom: 0.25rem;">LinkedIn</h4>
+                            <p class="text-muted" style="font-size: 0.9rem; margin: 0;">linkedin.com/in/johndoe</p>
+                        </div>
+                    </div>
+                    <div class="flex" style="gap: 1rem; align-items: center;">
+                        <span class="badge badge-warning">Pending</span>
+                        <button class="btn btn-secondary" data-action="verify">Verify</button>
+                        <button class="btn btn-danger" data-action="remove">Remove</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Discord -->
+            <div class="card mb-3">
+                <div class="flex" style="justify-content: space-between; align-items: center;">
+                    <div class="flex" style="align-items: center; gap: 1rem; flex: 1;">
+                        <div style="font-size: 2rem;">💬</div>
+                        <div style="flex: 1;">
+                            <h4 style="margin-bottom: 0.25rem;">Discord</h4>
+                            <p class="text-muted" style="font-size: 0.9rem; margin: 0;">johndoe#1234</p>
+                        </div>
+                    </div>
+                    <div class="flex" style="gap: 1rem; align-items: center;">
+                        <span class="badge badge-success">Verified</span>
+                        <button class="btn btn-secondary" data-action="edit">Edit</button>
+                        <button class="btn btn-danger" data-action="remove">Remove</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Telegram -->
+            <div class="card">
+                <div class="flex" style="justify-content: space-between; align-items: center;">
+                    <div class="flex" style="align-items: center; gap: 1rem; flex: 1;">
+                        <div style="font-size: 2rem;">📨</div>
+                        <div style="flex: 1;">
+                            <h4 style="margin-bottom: 0.25rem;">Telegram</h4>
+                            <p class="text-muted" style="font-size: 0.9rem; margin: 0;">@johndoe</p>
+                        </div>
+                    </div>
+                    <div class="flex" style="gap: 1rem; align-items: center;">
+                        <span class="badge badge-warning">Pending</span>
+                        <button class="btn btn-secondary" data-action="verify">Verify</button>
+                        <button class="btn btn-danger" data-action="remove">Remove</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add New Platform -->
+        <div class="card mb-4" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1.5rem;">➕ Add New Platform</h3>
+            <form data-action="add-social">
+                <div class="form-group">
+                    <label class="form-label">Select Platform</label>
+                    <select class="form-select" id="platform-select">
+                        <option value="">Choose a platform...</option>
+                        <option value="instagram">Instagram</option>
+                        <option value="youtube">YouTube</option>
+                        <option value="tiktok">TikTok</option>
+                        <option value="reddit">Reddit</option>
+                        <option value="medium">Medium</option>
+                        <option value="substack">Substack</option>
+                        <option value="mastodon">Mastodon</option>
+                        <option value="lens">Lens Protocol</option>
+                        <option value="farcaster">Farcaster</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Profile URL or Username</label>
+                    <input type="text" class="form-input" placeholder="@username or https://...">
+                </div>
+
+                <button class="btn btn-primary">Add Platform</button>
+            </form>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="card mb-4" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1.5rem;">📧 Contact Information</h3>
+            <form data-action="update-contact">
+                <div class="form-group">
+                    <label class="form-label">Email Address</label>
+                    <div class="flex gap-2">
+                        <input type="email" class="form-input" value="john.doe@example.com" style="flex: 1;">
+                        <span class="badge badge-success" style="padding: 0.75rem 1rem;">Verified</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Website</label>
+                    <input type="url" class="form-input" value="https://johndoe.com" placeholder="https://...">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Bio / Description</label>
+                    <textarea class="form-textarea" placeholder="Tell people about yourself...">Blockchain enthusiast, developer, and crypto advocate. Building the future of decentralized identity on Algorand.</textarea>
+                </div>
+
+                <button class="btn btn-primary">Update Contact Info</button>
+            </form>
+        </div>
+
+        <!-- Profile Preview -->
+        <div class="card" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1.5rem;">👁️ Public Profile Preview</h3>
+            <div class="card" style="background: var(--bg-card);">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <div style="width: 100px; height: 100px; border-radius: 50%; background: var(--gradient-1); margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 3rem;">👤</div>
+                    <h2 style="margin-bottom: 0.5rem;">johndoe.ever</h2>
+                    <p class="text-muted">john.doe@example.com | johndoe.com</p>
+                </div>
+
+                <p style="margin-bottom: 2rem; text-align: center;">
+                    Blockchain enthusiast, developer, and crypto advocate. Building the future of decentralized identity on Algorand.
+                </p>
+
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="#" class="btn btn-secondary">🐦 Twitter</a>
+                    <a href="#" class="btn btn-secondary">💻 GitHub</a>
+                    <a href="#" class="btn btn-secondary">💼 LinkedIn</a>
+                    <a href="#" class="btn btn-secondary">💬 Discord</a>
+                    <a href="#" class="btn btn-secondary">📨 Telegram</a>
+                </div>
+            </div>
+            <div class="flex gap-2 mt-3">
+                <button class="btn btn-primary">View Full Profile</button>
+                <button class="btn btn-outline">Share Profile</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

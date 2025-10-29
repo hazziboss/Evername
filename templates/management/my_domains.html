@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+
+{% block title %}My Domains - EverName{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <div class="flex" style="justify-content: space-between; align-items: center;">
+                <div>
+                    <h1 class="card-title">📁 My Domains</h1>
+                    <p class="card-subtitle">Manage all your registered domains</p>
+                </div>
+                <a href="/search" class="btn btn-primary">Register New Domain</a>
+            </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="stats-grid mb-4">
+            <div class="stat-card">
+                <div class="stat-value">3</div>
+                <div class="stat-label">Total Domains</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">3</div>
+                <div class="stat-label">Active</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">0</div>
+                <div class="stat-label">Expiring Soon</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">$25.50</div>
+                <div class="stat-label">Annual Value</div>
+            </div>
+        </div>
+
+        <!-- Filter & Search -->
+        <div class="card mb-4" style="background: var(--bg-dark);">
+            <div class="flex gap-3" style="flex-wrap: wrap;">
+                <input type="text" class="form-input" placeholder="Search domains..." style="flex: 1; min-width: 250px;">
+                <select class="form-select" style="min-width: 150px;">
+                    <option>All Domains</option>
+                    <option>Active</option>
+                    <option>Expiring Soon</option>
+                    <option>Expired</option>
+                </select>
+                <select class="form-select" style="min-width: 150px;">
+                    <option>Sort by: Name</option>
+                    <option>Sort by: Date</option>
+                    <option>Sort by: Expiration</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Domains List -->
+        <div class="card-grid">
+            <div class="card" style="background: var(--bg-dark);">
+                <div class="flex" style="justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                    <h3 style="margin: 0; font-size: 1.5rem;">johndoe.ever</h3>
+                    <span class="badge badge-success">Active</span>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <div class="flex" style="justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+                        <span class="text-muted">Registered:</span>
+                        <span style="font-weight: 600;">Jan 15, 2024</span>
+                    </div>
+                    <div class="flex" style="justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+                        <span class="text-muted">Expires:</span>
+                        <span style="font-weight: 600; color: var(--success-color);">Jan 15, 2025</span>
+                    </div>
+                    <div class="flex" style="justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+                        <span class="text-muted">Linked Wallets:</span>
+                        <span style="font-weight: 600;">7 chains</span>
+                    </div>
+                    <div class="flex" style="justify-content: space-between; padding: 0.5rem 0;">
+                        <span class="text-muted">Auto-Renew:</span>
+                        <span style="font-weight: 600; color: var(--success-color);">Enabled</span>
+                    </div>
+                </div>
+
+                <div class="flex gap-2">
+                    <a href="/domain-details?domain=johndoe" class="btn btn-primary" style="flex: 1;">Manage</a>
+                    <button class="btn btn-secondary" data-action="renew">Renew</button>
+                </div>
+            </div>
+
+            <div class="card" style="background: var(--bg-dark);">
+                <div class="flex" style="justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                    <h3 style="margin: 0; font-size: 1.5rem;">jdoe.ever</h3>
+                    <span class="badge badge-success">Active</span>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <div class="flex" style="justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+                        <span class="text-muted">Registered:</span>
+                        <span style="font-weight: 600;">Feb 3, 2024</span>
+                    </div>
+                    <div class="flex" style="justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+                        <span class="text-muted">Expires:</span>
+                        <span style="font-weight: 600; color: var(--success-color);">Feb 3, 2025</span>
+                    </div>
+                    <div class="flex" style="justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+                        <span class="text-muted">Linked Wallets:</span>
+                        <span style="font-weight: 600;">3 chains</span>
+                    </div>
+                    <div class="flex" style="justify-content: space-between; padding: 0.5rem 0;">
+                        <span class="text-muted">Auto-Renew:</span>
+                        <span style="font-weight: 600; color: var(--success-color);">Enabled</span>
+                    </div>
+                </div>
+
+                <div class="flex gap-2">
+                    <a href="/domain-details?domain=jdoe" class="btn btn-primary" style="flex: 1;">Manage</a>
+                    <button class="btn btn-secondary" data-action="renew">Renew</button>
+                </div>
+
+                <div class="alert alert-warning mt-3" style="margin-bottom: 0; font-size: 0.85rem;">
+                    💎 Premium domain
+                </div>
+            </div>
+
+            <div class="card" style="background: var(--bg-dark);">
+                <div class="flex" style="justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                    <h3 style="margin: 0; font-size: 1.5rem;">john-doe.ever</h3>
+                    <span class="badge badge-success">Active</span>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <div class="flex" style="justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+                        <span class="text-muted">Registered:</span>
+                        <span style="font-weight: 600;">Feb 10, 2024</span>
+                    </div>
+                    <div class="flex" style="justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+                        <span class="text-muted">Expires:</span>
+                        <span style="font-weight: 600; color: var(--success-color);">Feb 10, 2025</span>
+                    </div>
+                    <div class="flex" style="justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+                        <span class="text-muted">Linked Wallets:</span>
+                        <span style="font-weight: 600;">2 chains</span>
+                    </div>
+                    <div class="flex" style="justify-content: space-between; padding: 0.5rem 0;">
+                        <span class="text-muted">Auto-Renew:</span>
+                        <span style="font-weight: 600; color: var(--success-color);">Enabled</span>
+                    </div>
+                </div>
+
+                <div class="flex gap-2">
+                    <a href="/domain-details?domain=john-doe" class="btn btn-primary" style="flex: 1;">Manage</a>
+                    <button class="btn btn-secondary" data-action="renew">Renew</button>
+                </div>
+            </div>
+
+            <!-- Add New Domain Card -->
+            <div class="card" style="background: var(--bg-dark); border: 2px dashed var(--border-color); display: flex; align-items: center; justify-content: center; cursor: pointer; min-height: 300px;" onclick="window.location.href='/search'">
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">➕</div>
+                    <h3 style="color: var(--primary-light); margin-bottom: 0.5rem;">Register New Domain</h3>
+                    <p class="text-muted">Expand your digital identity</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bulk Actions -->
+        <div class="card mt-4" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1rem;">⚙️ Bulk Actions</h3>
+            <div class="flex gap-2">
+                <button class="btn btn-secondary" data-action="bulk-renew">Renew All</button>
+                <button class="btn btn-secondary" data-action="export-domains">Export List</button>
+                <button class="btn btn-outline" data-action="transfer-domains">Transfer Domains</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

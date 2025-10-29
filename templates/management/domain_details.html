@@ -1,0 +1,210 @@
+{% extends "base.html" %}
+
+{% block title %}Domain Details - EverName{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <div class="flex" style="justify-content: space-between; align-items: center;">
+                <div>
+                    <h1 class="card-title">johndoe.ever</h1>
+                    <p class="card-subtitle">Complete domain management</p>
+                </div>
+                <span class="badge badge-success" style="font-size: 1rem; padding: 0.5rem 1rem;">ACTIVE</span>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="flex gap-2 mb-4" style="flex-wrap: wrap;">
+            <a href="/linked-wallets?domain=johndoe" class="btn btn-primary">Manage Wallets</a>
+            <a href="/edit-records?domain=johndoe" class="btn btn-secondary">Edit Records</a>
+            <a href="/social-linking?domain=johndoe" class="btn btn-secondary">Social Links</a>
+            <button class="btn btn-outline" data-action="transfer">Transfer Domain</button>
+        </div>
+
+        <!-- Domain Info -->
+        <div class="card-grid mb-4">
+            <div class="card" style="background: var(--bg-dark);">
+                <h3 style="margin-bottom: 1rem;">📊 Domain Information</h3>
+                <div style="margin-bottom: 1rem;">
+                    <div class="flex" style="justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+                        <span class="text-muted">Domain Name:</span>
+                        <span style="font-weight: 600;">johndoe.ever</span>
+                    </div>
+                    <div class="flex" style="justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+                        <span class="text-muted">Owner:</span>
+                        <span style="font-weight: 600; font-family: monospace; font-size: 0.9rem;">XM3K...7YHN</span>
+                    </div>
+                    <div class="flex" style="justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+                        <span class="text-muted">Registered:</span>
+                        <span style="font-weight: 600;">Jan 15, 2024</span>
+                    </div>
+                    <div class="flex" style="justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+                        <span class="text-muted">Expires:</span>
+                        <span style="font-weight: 600; color: var(--success-color);">Jan 15, 2025</span>
+                    </div>
+                    <div class="flex" style="justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+                        <span class="text-muted">Days Until Expiration:</span>
+                        <span style="font-weight: 600;">321 days</span>
+                    </div>
+                    <div class="flex" style="justify-content: space-between; padding: 0.5rem 0;">
+                        <span class="text-muted">Auto-Renew:</span>
+                        <span style="font-weight: 600; color: var(--success-color);">Enabled</span>
+                    </div>
+                </div>
+                <button class="btn btn-secondary btn-block" data-action="renew-now">Renew Now</button>
+            </div>
+
+            <div class="card" style="background: var(--bg-dark);">
+                <h3 style="margin-bottom: 1rem;">🔗 Linked Resources</h3>
+                <div style="margin-bottom: 1rem;">
+                    <div class="flex" style="justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+                        <span class="text-muted">Connected Chains:</span>
+                        <span style="font-weight: 600; color: var(--primary-light);">7</span>
+                    </div>
+                    <div class="flex" style="justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+                        <span class="text-muted">Wallets:</span>
+                        <span style="font-weight: 600; color: var(--primary-light);">12</span>
+                    </div>
+                    <div class="flex" style="justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+                        <span class="text-muted">Social Profiles:</span>
+                        <span style="font-weight: 600; color: var(--primary-light);">5</span>
+                    </div>
+                    <div class="flex" style="justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+                        <span class="text-muted">Custom Records:</span>
+                        <span style="font-weight: 600; color: var(--primary-light);">3</span>
+                    </div>
+                    <div class="flex" style="justify-content: space-between; padding: 0.5rem 0;">
+                        <span class="text-muted">Legacy Delegates:</span>
+                        <span style="font-weight: 600; color: var(--primary-light);">3</span>
+                    </div>
+                </div>
+                <a href="/linked-wallets?domain=johndoe" class="btn btn-secondary btn-block">Manage Resources</a>
+            </div>
+        </div>
+
+        <!-- Linked Wallets Summary -->
+        <div class="card mb-4" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1.5rem;">💼 Linked Wallets</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Chain</th>
+                            <th>Wallet Address</th>
+                            <th>Type</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>⚡ Algorand</td>
+                            <td style="font-family: monospace;">XM3K...7YHN</td>
+                            <td><span class="badge badge-success">Primary</span></td>
+                            <td><button class="btn btn-secondary" style="padding: 0.5rem 1rem;">Edit</button></td>
+                        </tr>
+                        <tr>
+                            <td>🔷 Ethereum</td>
+                            <td style="font-family: monospace;">0x1234...5678</td>
+                            <td><span class="badge badge-primary">Resolver</span></td>
+                            <td><button class="btn btn-secondary" style="padding: 0.5rem 1rem;">Edit</button></td>
+                        </tr>
+                        <tr>
+                            <td>🟣 Polygon</td>
+                            <td style="font-family: monospace;">0x2468...1357</td>
+                            <td><span class="badge badge-primary">Resolver</span></td>
+                            <td><button class="btn btn-secondary" style="padding: 0.5rem 1rem;">Edit</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <a href="/linked-wallets?domain=johndoe" class="btn btn-outline mt-3">View All Wallets</a>
+        </div>
+
+        <!-- Domain Settings -->
+        <div class="card mb-4" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1.5rem;">⚙️ Domain Settings</h3>
+            <form data-action="update-settings">
+                <div class="form-group">
+                    <label class="flex" style="align-items: center; gap: 1rem; cursor: pointer;">
+                        <input type="checkbox" checked style="width: 20px; height: 20px;">
+                        <div>
+                            <div style="font-weight: 600; margin-bottom: 0.25rem;">Auto-Renewal</div>
+                            <div class="text-muted" style="font-size: 0.9rem;">Automatically renew domain before expiration</div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label class="flex" style="align-items: center; gap: 1rem; cursor: pointer;">
+                        <input type="checkbox" checked style="width: 20px; height: 20px;">
+                        <div>
+                            <div style="font-weight: 600; margin-bottom: 0.25rem;">Privacy Protection</div>
+                            <div class="text-muted" style="font-size: 0.9rem;">Hide owner wallet address from public view</div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label class="flex" style="align-items: center; gap: 1rem; cursor: pointer;">
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                        <div>
+                            <div style="font-weight: 600; margin-bottom: 0.25rem;">Transfer Lock</div>
+                            <div class="text-muted" style="font-size: 0.9rem;">Prevent unauthorized domain transfers</div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label class="flex" style="align-items: center; gap: 1rem; cursor: pointer;">
+                        <input type="checkbox" checked style="width: 20px; height: 20px;">
+                        <div>
+                            <div style="font-weight: 600; margin-bottom: 0.25rem;">Expiration Notifications</div>
+                            <div class="text-muted" style="font-size: 0.9rem;">Receive alerts before domain expiration</div>
+                        </div>
+                    </label>
+                </div>
+
+                <button class="btn btn-primary">Save Settings</button>
+            </form>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="card" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1.5rem;">📜 Recent Activity</h3>
+            <div style="border-left: 3px solid var(--primary-color); padding-left: 1.5rem; margin-bottom: 1rem;">
+                <div class="flex" style="justify-content: space-between; margin-bottom: 0.5rem;">
+                    <strong>Wallet linked</strong>
+                    <span class="text-muted">2 days ago</span>
+                </div>
+                <p class="text-muted" style="font-size: 0.9rem;">Added Solana wallet: 7xKW...9mPQ</p>
+            </div>
+            <div style="border-left: 3px solid var(--success-color); padding-left: 1.5rem; margin-bottom: 1rem;">
+                <div class="flex" style="justify-content: space-between; margin-bottom: 0.5rem;">
+                    <strong>Settings updated</strong>
+                    <span class="text-muted">1 week ago</span>
+                </div>
+                <p class="text-muted" style="font-size: 0.9rem;">Enabled auto-renewal</p>
+            </div>
+            <div style="border-left: 3px solid var(--primary-color); padding-left: 1.5rem;">
+                <div class="flex" style="justify-content: space-between; margin-bottom: 0.5rem;">
+                    <strong>Domain registered</strong>
+                    <span class="text-muted">Jan 15, 2024</span>
+                </div>
+                <p class="text-muted" style="font-size: 0.9rem;">Initial registration for 1 year</p>
+            </div>
+        </div>
+
+        <!-- Danger Zone -->
+        <div class="card mt-4" style="background: rgba(239, 68, 68, 0.1); border: 2px solid var(--danger-color);">
+            <h3 style="margin-bottom: 1rem; color: var(--danger-color);">⚠️ Danger Zone</h3>
+            <p class="text-muted" style="margin-bottom: 1rem;">Irreversible actions - proceed with caution</p>
+            <div class="flex gap-2">
+                <button class="btn btn-danger" data-action="release-domain">Release Domain</button>
+                <button class="btn btn-outline" style="border-color: var(--danger-color); color: var(--danger-color);" data-action="burn-domain">Burn Domain (Permanent)</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

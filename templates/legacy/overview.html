@@ -1,0 +1,262 @@
+{% extends "base.html" %}
+
+{% block title %}Legacy Overview - EverName{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <div class="flex" style="justify-content: space-between; align-items: center;">
+                <div>
+                    <h1 class="card-title">🏛️ Legacy Planning Overview</h1>
+                    <p class="card-subtitle">Secure your digital assets for the future</p>
+                </div>
+                <span class="badge badge-success" style="font-size: 1rem; padding: 0.5rem 1rem;">PLAN ACTIVE</span>
+            </div>
+        </div>
+
+        <!-- Status Banner -->
+        <div class="alert alert-success mb-4">
+            <div class="flex" style="justify-content: space-between; align-items: center;">
+                <div>
+                    <h3 style="margin-bottom: 0.5rem;">✅ Your Legacy Plan is Active & Locked</h3>
+                    <p style="margin: 0; opacity: 0.9;">Last updated: Feb 20, 2024 • Locked since: Jan 15, 2024</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="stats-grid mb-4">
+            <div class="stat-card">
+                <div class="stat-value">3</div>
+                <div class="stat-label">Active Delegates</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">180</div>
+                <div class="stat-label">Inactivity Threshold (days)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">45</div>
+                <div class="stat-label">Grace Period (days)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">$25.5K</div>
+                <div class="stat-label">Protected Assets</div>
+            </div>
+        </div>
+
+        <!-- Delegates Summary -->
+        <div class="card mb-4" style="background: var(--bg-dark);">
+            <div class="flex" style="justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h3 style="margin: 0;">👥 Delegate Structure</h3>
+                <a href="/legacy/delegate-tree" class="btn btn-secondary">View Tree</a>
+            </div>
+
+            <div class="card-grid">
+                <div class="card" style="background: var(--bg-card);">
+                    <div class="flex" style="justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <h4 style="margin: 0;">Primary Delegate</h4>
+                        <span class="badge badge-success">Active</span>
+                    </div>
+                    <p style="font-weight: 600; margin-bottom: 0.5rem;">Sarah Johnson</p>
+                    <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 1rem;">sarah.ever</p>
+                    <div class="flex" style="justify-content: space-between;">
+                        <span class="text-muted">Allocation:</span>
+                        <span style="font-weight: 700; color: var(--primary-light);">50%</span>
+                    </div>
+                </div>
+
+                <div class="card" style="background: var(--bg-card);">
+                    <div class="flex" style="justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <h4 style="margin: 0;">Secondary Delegate</h4>
+                        <span class="badge badge-primary">Active</span>
+                    </div>
+                    <p style="font-weight: 600; margin-bottom: 0.5rem;">Michael Chen</p>
+                    <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 1rem;">mchen.ever</p>
+                    <div class="flex" style="justify-content: space-between;">
+                        <span class="text-muted">Allocation:</span>
+                        <span style="font-weight: 700; color: var(--primary-light);">30%</span>
+                    </div>
+                </div>
+
+                <div class="card" style="background: var(--bg-card);">
+                    <div class="flex" style="justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <h4 style="margin: 0;">Tertiary Delegate</h4>
+                        <span class="badge badge-primary">Active</span>
+                    </div>
+                    <p style="font-weight: 600; margin-bottom: 0.5rem;">Emily Rodriguez</p>
+                    <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 1rem;">emily.ever</p>
+                    <div class="flex" style="justify-content: space-between;">
+                        <span class="text-muted">Allocation:</span>
+                        <span style="font-weight: 700; color: var(--primary-light);">20%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex gap-2 mt-3">
+                <a href="/legacy/add-delegate" class="btn btn-primary">Add Delegate</a>
+                <a href="/legacy/allocate-permissions" class="btn btn-secondary">Adjust Allocations</a>
+            </div>
+        </div>
+
+        <!-- Protected Assets -->
+        <div class="card mb-4" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1.5rem;">🔒 Protected Assets</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Asset Type</th>
+                            <th>Quantity</th>
+                            <th>Estimated Value</th>
+                            <th>Delegates</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Domains</strong></td>
+                            <td>3</td>
+                            <td>$225</td>
+                            <td>All 3</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Linked Wallets</strong></td>
+                            <td>12 wallets, 7 chains</td>
+                            <td>$12,400</td>
+                            <td>All 3</td>
+                        </tr>
+                        <tr>
+                            <td><strong>NFT Collection</strong></td>
+                            <td>47 NFTs</td>
+                            <td>$8,200</td>
+                            <td>Primary only</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Social Profiles</strong></td>
+                            <td>5 platforms</td>
+                            <td>N/A</td>
+                            <td>All 3</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Liveness Monitoring -->
+        <div class="card mb-4" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1.5rem;">💚 Liveness Monitoring Status</h3>
+            <div class="flex" style="gap: 2rem; align-items: center;">
+                <div style="flex: 1;">
+                    <div class="flex" style="justify-content: space-between; margin-bottom: 1rem;">
+                        <span>Last Activity:</span>
+                        <strong style="color: var(--success-color);">2 hours ago</strong>
+                    </div>
+                    <div class="flex" style="justify-content: space-between; margin-bottom: 1rem;">
+                        <span>Days Inactive:</span>
+                        <strong style="color: var(--success-color);">0 / 180</strong>
+                    </div>
+                    <div class="flex" style="justify-content: space-between; margin-bottom: 1rem;">
+                        <span>Status:</span>
+                        <strong style="color: var(--success-color);">Active & Healthy</strong>
+                    </div>
+                    <div class="flex" style="justify-content: space-between;">
+                        <span>Next Check Required:</span>
+                        <strong>In 178 days</strong>
+                    </div>
+                </div>
+                <div style="flex: 1;">
+                    <div class="progress-container" style="height: 20px;">
+                        <div class="progress-bar" style="width: 0.5%; background: var(--success-color);"></div>
+                    </div>
+                    <p class="text-muted mt-2" style="text-align: center;">0.5% of threshold reached</p>
+                </div>
+            </div>
+            <button class="btn btn-success btn-block mt-3" data-action="check-in">Perform Manual Check-In</button>
+        </div>
+
+        <!-- Legacy Documents -->
+        <div class="card mb-4" style="background: var(--bg-dark);">
+            <div class="flex" style="justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h3 style="margin: 0;">📄 Legacy Documents</h3>
+                <a href="/legacy/upload-will" class="btn btn-secondary">Upload/Update</a>
+            </div>
+
+            <div class="card mb-3" style="background: var(--bg-card);">
+                <div class="flex" style="justify-content: space-between; align-items: center;">
+                    <div class="flex" style="gap: 1rem; align-items: center;">
+                        <span style="font-size: 2.5rem;">🎥</span>
+                        <div>
+                            <h4 style="margin-bottom: 0.25rem;">Video Will</h4>
+                            <p class="text-muted" style="font-size: 0.9rem; margin: 0;">Uploaded: Jan 15, 2024 • Duration: 4:32</p>
+                        </div>
+                    </div>
+                    <div class="flex" style="gap: 1rem; align-items: center;">
+                        <span class="badge badge-success">Encrypted</span>
+                        <button class="btn btn-secondary">Preview</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="background: var(--bg-card);">
+                <div class="flex" style="justify-content: space-between; align-items: center;">
+                    <div class="flex" style="gap: 1rem; align-items: center;">
+                        <span style="font-size: 2.5rem;">📋</span>
+                        <div>
+                            <h4 style="margin-bottom: 0.25rem;">Written Instructions</h4>
+                            <p class="text-muted" style="font-size: 0.9rem; margin: 0;">Last updated: Feb 20, 2024</p>
+                        </div>
+                    </div>
+                    <div class="flex" style="gap: 1rem; align-items: center;">
+                        <span class="badge badge-success">Encrypted</span>
+                        <button class="btn btn-secondary">View</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Plan Settings -->
+        <div class="card" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1.5rem;">⚙️ Plan Settings</h3>
+            <div style="margin-bottom: 1.5rem;">
+                <div class="flex" style="justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid var(--border-color);">
+                    <div>
+                        <strong>Inactivity Threshold</strong>
+                        <p class="text-muted" style="font-size: 0.9rem; margin: 0;">Time before grace period starts</p>
+                    </div>
+                    <span style="font-weight: 600;">180 days</span>
+                </div>
+                <div class="flex" style="justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid var(--border-color);">
+                    <div>
+                        <strong>Grace Period</strong>
+                        <p class="text-muted" style="font-size: 0.9rem; margin: 0;">Time to respond before execution</p>
+                    </div>
+                    <span style="font-weight: 600;">45 days</span>
+                </div>
+                <div class="flex" style="justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid var(--border-color);">
+                    <div>
+                        <strong>Notification Settings</strong>
+                        <p class="text-muted" style="font-size: 0.9rem; margin: 0;">How delegates are notified</p>
+                    </div>
+                    <span style="font-weight: 600;">All Channels</span>
+                </div>
+                <div class="flex" style="justify-content: space-between; padding: 1rem 0;">
+                    <div>
+                        <strong>Plan Status</strong>
+                        <p class="text-muted" style="font-size: 0.9rem; margin: 0;">Current plan state</p>
+                    </div>
+                    <span class="badge badge-success">Locked & Active</span>
+                </div>
+            </div>
+
+            <div class="alert alert-warning">
+                <strong>Note:</strong> Your legacy plan is currently locked. To make changes, you must unlock it first. This will reset your inactivity counter.
+            </div>
+
+            <div class="flex gap-2">
+                <button class="btn btn-secondary" data-action="unlock-plan">Unlock Plan to Edit</button>
+                <a href="/legacy/confirm" class="btn btn-outline">Review & Re-confirm</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Records - EverName{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1 class="card-title">✏️ Edit Resolver Records</h1>
+            <p class="card-subtitle">Manage all records for johndoe.ever</p>
+        </div>
+
+        <form data-action="update-records">
+            <!-- Wallet Addresses -->
+            <div class="card mb-4" style="background: var(--bg-dark);">
+                <h3 style="margin-bottom: 1.5rem;">💼 Wallet Addresses</h3>
+
+                <div class="form-group">
+                    <label class="form-label">⚡ Algorand Address</label>
+                    <input type="text" class="form-input" value="XM3K...7YHN" readonly>
+                    <p class="text-muted" style="font-size: 0.85rem; margin-top: 0.5rem;">Primary wallet (cannot be changed here)</p>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">🔷 Ethereum Address</label>
+                    <input type="text" class="form-input" value="0x1234567890abcdef1234567890abcdef12345678" placeholder="0x...">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">🟣 Polygon Address</label>
+                    <input type="text" class="form-input" value="0x2468135790abcdef2468135790abcdef24681357" placeholder="0x...">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">🌊 Solana Address</label>
+                    <input type="text" class="form-input" value="7xKWp3f9mPQn8sWXr2Yt5ZvHcA1BgDjE4FkL6GmN9hPq" placeholder="Base58 address">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">🌀 Sui Address</label>
+                    <input type="text" class="form-input" value="0xC3F2...8A1D" placeholder="0x...">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">🅰️ Aptos Address</label>
+                    <input type="text" class="form-input" value="0x7B5E...3F9A" placeholder="0x...">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">🟡 BNB Chain Address</label>
+                    <input type="text" class="form-input" value="0x4D8F...2E6C" placeholder="0x...">
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="card mb-4" style="background: var(--bg-dark);">
+                <h3 style="margin-bottom: 1.5rem;">📧 Contact Information</h3>
+
+                <div class="form-group">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-input" value="john.doe@example.com" placeholder="your@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Website URL</label>
+                    <input type="url" class="form-input" value="https://johndoe.com" placeholder="https://...">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Description/Bio</label>
+                    <textarea class="form-textarea" placeholder="Tell the world about yourself...">Blockchain enthusiast, developer, and crypto advocate. Building the future of decentralized identity.</textarea>
+                </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="card mb-4" style="background: var(--bg-dark);">
+                <h3 style="margin-bottom: 1.5rem;">🌐 Social Media Links</h3>
+
+                <div class="form-group">
+                    <label class="form-label">Twitter/X Handle</label>
+                    <input type="text" class="form-input" value="@johndoe" placeholder="@username">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">GitHub Username</label>
+                    <input type="text" class="form-input" value="johndoe" placeholder="username">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">LinkedIn Profile</label>
+                    <input type="url" class="form-input" value="https://linkedin.com/in/johndoe" placeholder="https://linkedin.com/in/...">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Discord Username</label>
+                    <input type="text" class="form-input" value="johndoe#1234" placeholder="username#0000">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Telegram Handle</label>
+                    <input type="text" class="form-input" value="@johndoe" placeholder="@username">
+                </div>
+            </div>
+
+            <!-- Custom Records -->
+            <div class="card mb-4" style="background: var(--bg-dark);">
+                <h3 style="margin-bottom: 1.5rem;">🔧 Custom Records</h3>
+
+                <div class="form-group">
+                    <label class="form-label">Avatar/Profile Picture URL</label>
+                    <input type="url" class="form-input" value="https://ipfs.io/ipfs/QmX..." placeholder="https://... or ipfs://...">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Banner Image URL</label>
+                    <input type="url" class="form-input" placeholder="https://... or ipfs://...">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Custom Record 1</label>
+                    <div class="flex gap-2">
+                        <input type="text" class="form-input" placeholder="Key" style="flex: 1;">
+                        <input type="text" class="form-input" placeholder="Value" style="flex: 2;">
+                        <button type="button" class="btn btn-danger">Remove</button>
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-secondary mt-2" data-action="add-custom-record">Add Custom Record</button>
+            </div>
+
+            <!-- Content Hash (IPFS/Web3) -->
+            <div class="card mb-4" style="background: var(--bg-dark);">
+                <h3 style="margin-bottom: 1.5rem;">🌐 Content Hash (Decentralized Website)</h3>
+
+                <div class="form-group">
+                    <label class="form-label">IPFS Hash</label>
+                    <input type="text" class="form-input" placeholder="Qm... or ipfs://...">
+                    <p class="text-muted" style="font-size: 0.85rem; margin-top: 0.5rem;">
+                        Point your domain to an IPFS-hosted website
+                    </p>
+                </div>
+            </div>
+
+            <!-- Save Actions -->
+            <div class="flex gap-2">
+                <button type="submit" class="btn btn-primary btn-large">Save All Changes</button>
+                <button type="button" class="btn btn-secondary" data-action="preview">Preview Changes</button>
+                <button type="button" class="btn btn-outline" data-action="reset">Reset to Saved</button>
+            </div>
+
+            <div class="alert alert-info mt-4">
+                <strong>Note:</strong> Changes may take up to 5 minutes to propagate across the network. Gas fees will apply for on-chain updates.
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

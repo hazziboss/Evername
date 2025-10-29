@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome to EverName{% endblock %}
+
+{% block content %}
+<div class="hero" style="min-height: 80vh; display: flex; align-items: center; justify-content: center;">
+    <div style="max-width: 800px;">
+        <div style="font-size: 5rem; margin-bottom: 1rem;">⚡</div>
+        <h1 class="hero-title">Welcome to EverName</h1>
+        <p class="hero-subtitle">
+            The decentralized identity & legacy platform powered by Nillion Network.
+            <br>
+            Secure your digital identity and plan your legacy with privacy-preserving technology.
+        </p>
+
+        <div style="margin: 3rem 0;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; max-width: 600px; margin: 0 auto;">
+                <div style="text-align: center; padding: 1.5rem;">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🔐</div>
+                    <h3 style="color: white; margin-bottom: 0.5rem;">Privacy-First</h3>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">Your data encrypted with Nillion</p>
+                </div>
+                <div style="text-align: center; padding: 1.5rem;">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🌐</div>
+                    <h3 style="color: white; margin-bottom: 0.5rem;">Multi-Chain</h3>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">Support for EVM, Solana, Sui & more</p>
+                </div>
+                <div style="text-align: center; padding: 1.5rem;">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">👥</div>
+                    <h3 style="color: white; margin-bottom: 0.5rem;">Legacy Planning</h3>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">Trustless delegation & inheritance</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-actions">
+            <a href="/connect-wallet" class="btn btn-primary btn-large">
+                Get Started
+            </a>
+            <a href="#features" class="btn btn-outline btn-large" style="color: white; border-color: white;">
+                Learn More
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="features" style="margin-top: 4rem;">
+    <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem;">Why EverName?</h2>
+
+    <div class="card-grid">
+        <div class="card">
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">🎯 One Domain, All Chains</h3>
+            <p style="color: var(--text-secondary);">
+                Register a single .ever domain that works across Ethereum, Solana, Sui, Aptos, BNB Chain, and more.
+                No need for multiple ENS names.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">🔒 Nillion-Powered Privacy</h3>
+            <p style="color: var(--text-secondary);">
+                Your delegation plans, will documents, and liveness data are encrypted using Nillion's blind computation.
+                Not even we can see your sensitive information.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">⚡ Automatic Execution</h3>
+            <p style="color: var(--text-secondary);">
+                Set up delegates once, and the system automatically executes your legacy plan if you become inactive.
+                No manual claims, no appeals—just trustless automation.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">💰 NIL Token Utility</h3>
+            <p style="color: var(--text-secondary);">
+                Stake NIL tokens for premium features, get discounts on renewals, and participate in governance.
+                The more you stake, the more you save.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">📱 Multi-Contact Binding</h3>
+            <p style="color: var(--text-secondary);">
+                Link your email, phone, WhatsApp, and Telegram to your domain.
+                Receive notifications about renewals, delegate activities, and liveness checks.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">🌟 Premium Tiers</h3>
+            <p style="color: var(--text-secondary);">
+                Unlock video wills, priority support, advanced analytics, and multi-delegate management
+                with Premium and Enterprise tiers.
+            </p>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 4rem;">
+        <a href="/connect-wallet" class="btn btn-primary btn-large">
+            Start Your Journey →
+        </a>
+    </div>
+</div>
+{% endblock %}

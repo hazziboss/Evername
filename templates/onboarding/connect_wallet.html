@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %}Connect Wallet - EverName{% endblock %}
+
+{% block content %}
+<div class="container" style="max-width: 600px; margin-top: 4rem;">
+    <div class="card">
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <div style="font-size: 4rem; margin-bottom: 1rem;">👛</div>
+            <h1 class="card-title">Connect Your Wallet</h1>
+            <p class="card-subtitle">Choose your preferred wallet to get started with EverName</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+            <button class="btn btn-primary btn-large btn-block" data-action="connect-wallet" data-provider="metamask">
+                <span style="font-size: 1.5rem;">🦊</span>
+                Connect MetaMask
+            </button>
+
+            <button class="btn btn-secondary btn-large btn-block" data-action="connect-wallet" data-provider="walletconnect">
+                <span style="font-size: 1.5rem;">🔗</span>
+                WalletConnect
+            </button>
+
+            <button class="btn btn-secondary btn-large btn-block" data-action="connect-wallet" data-provider="coinbase">
+                <span style="font-size: 1.5rem;">💼</span>
+                Coinbase Wallet
+            </button>
+
+            <button class="btn btn-secondary btn-large btn-block" data-action="connect-wallet" data-provider="phantom">
+                <span style="font-size: 1.5rem;">👻</span>
+                Phantom (Solana)
+            </button>
+        </div>
+
+        <div class="alert alert-info" style="margin-top: 2rem;">
+            <strong>Multi-Chain Support:</strong> After connecting, you'll be able to link additional wallets from different chains
+            including Ethereum, Solana, Sui, Aptos, and BNB Chain.
+        </div>
+
+        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+            <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">Why Connect a Wallet?</h3>
+            <ul style="color: var(--text-secondary); line-height: 1.8;">
+                <li>Register and manage your .ever domains</li>
+                <li>Link multiple blockchain addresses to one identity</li>
+                <li>Set up legacy plans and delegates</li>
+                <li>Access premium features with NIL tokens</li>
+            </ul>
+        </div>
+
+        <div style="margin-top: 2rem; text-align: center;">
+            <p style="color: var(--text-muted); font-size: 0.9rem;">
+                Don't have a wallet?
+                <a href="https://metamask.io" target="_blank" style="color: var(--primary-light);">Get MetaMask</a>
+            </p>
+        </div>
+    </div>
+
+    <div style="margin-top: 2rem; text-align: center;">
+        <a href="/" style="color: var(--text-muted); text-decoration: none;">← Back to Home</a>
+    </div>
+</div>
+
+<script>
+document.querySelectorAll('[data-action="connect-wallet"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const provider = btn.dataset.provider;
+        console.log('Connecting to', provider);
+        // The main.js will handle the actual connection
+        if (provider === 'metamask' || !provider) {
+            connectWallet();
+        } else {
+            showNotification(`${provider} integration coming soon!`, 'info');
+        }
+    });
+});
+</script>
+{% endblock %}

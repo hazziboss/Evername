@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+
+{% block title %}Nillion Login - EverName{% endblock %}
+
+{% block content %}
+<div class="container" style="max-width: 700px; margin-top: 4rem;">
+    <div class="card">
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <div style="font-size: 4rem; margin-bottom: 1rem;">🔐</div>
+            <h1 class="card-title">Nillion Network Authentication</h1>
+            <p class="card-subtitle">Secure your identity with privacy-preserving blind computation</p>
+        </div>
+
+        <div id="login-step" class="step-content">
+            <div class="alert alert-info">
+                <strong>Privacy First:</strong> Your data will be encrypted using Nillion's blind computation technology.
+                Not even EverName can access your sensitive information.
+            </div>
+
+            <div style="margin: 2rem 0;">
+                <h3 style="margin-bottom: 1rem;">What will be encrypted?</h3>
+                <div style="display: grid; gap: 1rem;">
+                    <div style="display: flex; gap: 1rem; align-items: start;">
+                        <span style="font-size: 1.5rem;">✅</span>
+                        <div>
+                            <strong>Delegation Plans</strong>
+                            <p style="color: var(--text-secondary); margin: 0;">Your delegate information and permission allocations</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 1rem; align-items: start;">
+                        <span style="font-size: 1.5rem;">✅</span>
+                        <div>
+                            <strong>Liveness Data</strong>
+                            <p style="color: var(--text-secondary); margin: 0;">Your activity timestamps and inactivity triggers</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 1rem; align-items: start;">
+                        <span style="font-size: 1.5rem;">✅</span>
+                        <div>
+                            <strong>Will Documents</strong>
+                            <p style="color: var(--text-secondary); margin: 0;">Video or scanned will uploads (Premium tier)</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 1rem; align-items: start;">
+                        <span style="font-size: 1.5rem;">✅</span>
+                        <div>
+                            <strong>Contact Information</strong>
+                            <p style="color: var(--text-secondary); margin: 0;">Your email, phone, and messaging app details</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button id="nillion-auth-btn" class="btn btn-primary btn-large btn-block">
+                <span>🔒</span>
+                Initialize Nillion Authentication
+            </button>
+
+            <div style="margin-top: 2rem;">
+                <div class="progress-container">
+                    <div id="auth-progress" class="progress-bar" style="width: 0%;"></div>
+                </div>
+                <p id="auth-status" style="text-align: center; margin-top: 0.5rem; color: var(--text-muted);">
+                    Ready to authenticate
+                </p>
+            </div>
+        </div>
+
+        <div id="success-step" class="step-content" style="display: none;">
+            <div style="text-align: center;">
+                <div style="font-size: 5rem; margin-bottom: 1rem;">✅</div>
+                <h2 style="color: var(--success-color); margin-bottom: 1rem;">Authentication Successful!</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+                    Your identity is now secured with Nillion's blind computation technology.
+                    All sensitive data will be encrypted and privacy-preserved.
+                </p>
+
+                <div class="card" style="background: var(--bg-dark); margin: 2rem 0;">
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; text-align: left;">
+                        <div>
+                            <strong style="color: var(--text-muted);">Wallet Address:</strong>
+                            <p id="display-wallet" style="font-family: monospace; margin: 0.5rem 0 0;">0x1234...5678</p>
+                        </div>
+                        <div>
+                            <strong style="color: var(--text-muted);">Nillion Node ID:</strong>
+                            <p style="font-family: monospace; margin: 0.5rem 0 0;">nil_node_789abc</p>
+                        </div>
+                        <div>
+                            <strong style="color: var(--text-muted);">Encryption Status:</strong>
+                            <p style="margin: 0.5rem 0 0;"><span class="badge badge-success">Active</span></p>
+                        </div>
+                        <div>
+                            <strong style="color: var(--text-muted);">Network:</strong>
+                            <p style="margin: 0.5rem 0 0;">Nillion Testnet</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="/dashboard" class="btn btn-primary btn-large btn-block">
+                    Go to Dashboard →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 2rem; text-align: center;">
+        <a href="/connect-wallet" style="color: var(--text-muted); text-decoration: none;">← Back to Wallet Connection</a>
+    </div>
+</div>
+
+<script>
+document.getElementById('nillion-auth-btn').addEventListener('click', async () => {
+    const btn = document.getElementById('nillion-auth-btn');
+    const progress = document.getElementById('auth-progress');
+    const status = document.getElementById('auth-status');
+    const loginStep = document.getElementById('login-step');
+    const successStep = document.getElementById('success-step');
+
+    btn.disabled = true;
+    btn.textContent = 'Authenticating...';
+
+    // Simulate Nillion authentication process
+    const steps = [
+        { progress: 25, message: 'Connecting to Nillion Network...' },
+        { progress: 50, message: 'Generating encryption keys...' },
+        { progress: 75, message: 'Initializing blind computation...' },
+        { progress: 100, message: 'Authentication complete!' }
+    ];
+
+    for (const step of steps) {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        progress.style.width = step.progress + '%';
+        status.textContent = step.message;
+    }
+
+    // Show success step
+    setTimeout(() => {
+        loginStep.style.display = 'none';
+        successStep.style.display = 'block';
+
+        // Update wallet address from session
+        const wallet = JSON.parse(sessionStorage.getItem('wallet') || '{}');
+        if (wallet.address) {
+            document.getElementById('display-wallet').textContent =
+                wallet.address.slice(0, 6) + '...' + wallet.address.slice(-4);
+        }
+
+        showNotification('Nillion authentication successful!', 'success');
+    }, 500);
+});
+</script>
+{% endblock %}

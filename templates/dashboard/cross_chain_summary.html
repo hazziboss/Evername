@@ -1,0 +1,197 @@
+{% extends "base.html" %}
+
+{% block title %}Cross-Chain Summary - EverName{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1 class="card-title">🔗 Cross-Chain Domains & Wallets</h1>
+            <p class="card-subtitle">Unified view of your multi-chain identity</p>
+        </div>
+
+        <!-- Chain Stats -->
+        <div class="stats-grid mb-4">
+            <div class="stat-card">
+                <div class="stat-value">7</div>
+                <div class="stat-label">Connected Chains</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">12</div>
+                <div class="stat-label">Linked Wallets</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">3</div>
+                <div class="stat-label">Active Domains</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">$12.4K</div>
+                <div class="stat-label">Total Portfolio Value</div>
+            </div>
+        </div>
+
+        <!-- Connected Chains -->
+        <div class="card mb-4" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1.5rem;">🌐 Connected Blockchain Networks</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="flex" style="justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <h4 style="margin: 0;">⚡ Algorand</h4>
+                        <span class="badge badge-success">Primary</span>
+                    </div>
+                    <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 0.5rem;">Wallets: 2</p>
+                    <p class="text-muted" style="font-size: 0.9rem; word-break: break-all;">
+                        XM3K...7YHN<br>
+                        ALGO...4KLP
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="flex" style="justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <h4 style="margin: 0;">🔷 Ethereum</h4>
+                        <span class="badge badge-primary">Active</span>
+                    </div>
+                    <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 0.5rem;">Wallets: 3</p>
+                    <p class="text-muted" style="font-size: 0.9rem; word-break: break-all;">
+                        0x1234...5678<br>
+                        0xABCD...EF01<br>
+                        0x9876...5432
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="flex" style="justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <h4 style="margin: 0;">🟣 Polygon</h4>
+                        <span class="badge badge-primary">Active</span>
+                    </div>
+                    <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 0.5rem;">Wallets: 2</p>
+                    <p class="text-muted" style="font-size: 0.9rem; word-break: break-all;">
+                        0x2468...1357<br>
+                        0x8642...9753
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="flex" style="justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <h4 style="margin: 0;">🌊 Solana</h4>
+                        <span class="badge badge-primary">Active</span>
+                    </div>
+                    <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 0.5rem;">Wallets: 2</p>
+                    <p class="text-muted" style="font-size: 0.9rem; word-break: break-all;">
+                        7xKW...9mPQ<br>
+                        BnT4...8sWX
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="flex" style="justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <h4 style="margin: 0;">🌀 Sui</h4>
+                        <span class="badge badge-primary">Active</span>
+                    </div>
+                    <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 0.5rem;">Wallets: 1</p>
+                    <p class="text-muted" style="font-size: 0.9rem; word-break: break-all;">
+                        0xC3F2...8A1D
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="flex" style="justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <h4 style="margin: 0;">🅰️ Aptos</h4>
+                        <span class="badge badge-primary">Active</span>
+                    </div>
+                    <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 0.5rem;">Wallets: 1</p>
+                    <p class="text-muted" style="font-size: 0.9rem; word-break: break-all;">
+                        0x7B5E...3F9A
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="flex" style="justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <h4 style="margin: 0;">🟡 BNB Chain</h4>
+                        <span class="badge badge-primary">Active</span>
+                    </div>
+                    <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 0.5rem;">Wallets: 1</p>
+                    <p class="text-muted" style="font-size: 0.9rem; word-break: break-all;">
+                        0x4D8F...2E6C
+                    </p>
+                </div>
+
+                <div class="card" style="border: 2px dashed var(--border-color); display: flex; align-items: center; justify-content: center; cursor: pointer;" data-action="add-chain">
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">➕</div>
+                        <p style="color: var(--primary-light); font-weight: 600;">Add Chain</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wallet List -->
+        <div class="card" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1.5rem;">💼 All Connected Wallets</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Chain</th>
+                            <th>Wallet Address</th>
+                            <th>Type</th>
+                            <th>Balance</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>⚡ Algorand</td>
+                            <td style="font-family: monospace;">XM3K...7YHN</td>
+                            <td><span class="badge badge-success">Primary</span></td>
+                            <td>$4,250</td>
+                            <td><span class="badge badge-success">Active</span></td>
+                            <td><button class="btn btn-secondary" style="padding: 0.5rem 1rem;">Manage</button></td>
+                        </tr>
+                        <tr>
+                            <td>🔷 Ethereum</td>
+                            <td style="font-family: monospace;">0x1234...5678</td>
+                            <td><span class="badge badge-primary">Resolver</span></td>
+                            <td>$3,120</td>
+                            <td><span class="badge badge-success">Active</span></td>
+                            <td><button class="btn btn-secondary" style="padding: 0.5rem 1rem;">Manage</button></td>
+                        </tr>
+                        <tr>
+                            <td>🟣 Polygon</td>
+                            <td style="font-family: monospace;">0x2468...1357</td>
+                            <td><span class="badge badge-primary">Resolver</span></td>
+                            <td>$1,850</td>
+                            <td><span class="badge badge-success">Active</span></td>
+                            <td><button class="btn btn-secondary" style="padding: 0.5rem 1rem;">Manage</button></td>
+                        </tr>
+                        <tr>
+                            <td>🌊 Solana</td>
+                            <td style="font-family: monospace;">7xKW...9mPQ</td>
+                            <td><span class="badge badge-primary">Resolver</span></td>
+                            <td>$2,480</td>
+                            <td><span class="badge badge-success">Active</span></td>
+                            <td><button class="btn btn-secondary" style="padding: 0.5rem 1rem;">Manage</button></td>
+                        </tr>
+                        <tr>
+                            <td>🌀 Sui</td>
+                            <td style="font-family: monospace;">0xC3F2...8A1D</td>
+                            <td><span class="badge badge-primary">Resolver</span></td>
+                            <td>$720</td>
+                            <td><span class="badge badge-success">Active</span></td>
+                            <td><button class="btn btn-secondary" style="padding: 0.5rem 1rem;">Manage</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex gap-2 mt-4">
+            <a href="/add-chain" class="btn btn-primary">Add New Chain</a>
+            <a href="/linked-wallets" class="btn btn-secondary">Manage Wallets</a>
+            <button class="btn btn-outline" data-action="export-data">Export Data</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+
+{% block title %}Linked Wallets - EverName{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <div class="flex" style="justify-content: space-between; align-items: center;">
+                <div>
+                    <h1 class="card-title">💼 Linked Wallets & Resolvers</h1>
+                    <p class="card-subtitle">Manage cross-chain wallet connections for johndoe.ever</p>
+                </div>
+                <a href="/add-chain?domain=johndoe" class="btn btn-primary">Add Chain</a>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-grid mb-4">
+            <div class="stat-card">
+                <div class="stat-value">7</div>
+                <div class="stat-label">Connected Chains</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">12</div>
+                <div class="stat-label">Total Wallets</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">$12.4K</div>
+                <div class="stat-label">Total Value</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">100%</div>
+                <div class="stat-label">Verified</div>
+            </div>
+        </div>
+
+        <!-- Primary Wallet -->
+        <div class="card mb-4" style="background: var(--gradient-1);">
+            <div style="color: white;">
+                <h3 style="margin-bottom: 1.5rem;">⭐ Primary Wallet (Owner)</h3>
+                <div class="flex" style="justify-content: space-between; align-items: center; padding: 1.5rem; background: rgba(255, 255, 255, 0.1); border-radius: 0.5rem; backdrop-filter: blur(10px);">
+                    <div>
+                        <div style="opacity: 0.9; margin-bottom: 0.5rem;">⚡ Algorand</div>
+                        <div style="font-family: monospace; font-size: 1.2rem; font-weight: 600;">XM3K...7YHN</div>
+                    </div>
+                    <div>
+                        <span class="badge badge-success" style="font-size: 1rem; padding: 0.5rem 1rem;">PRIMARY</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resolver Wallets -->
+        <div class="card" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1.5rem;">🔗 Resolver Wallets</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Chain</th>
+                            <th>Wallet Address</th>
+                            <th>Type</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>🔷 Ethereum</td>
+                            <td style="font-family: monospace;">0x1234...5678</td>
+                            <td><span class="badge badge-primary">Resolver</span></td>
+                            <td><span class="badge badge-success">Verified</span></td>
+                            <td>
+                                <div class="flex gap-1">
+                                    <button class="btn btn-secondary" style="padding: 0.5rem 1rem;" data-action="edit">Edit</button>
+                                    <button class="btn btn-danger" style="padding: 0.5rem 1rem;" data-action="remove">Remove</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>🟣 Polygon</td>
+                            <td style="font-family: monospace;">0x2468...1357</td>
+                            <td><span class="badge badge-primary">Resolver</span></td>
+                            <td><span class="badge badge-success">Verified</span></td>
+                            <td>
+                                <div class="flex gap-1">
+                                    <button class="btn btn-secondary" style="padding: 0.5rem 1rem;" data-action="edit">Edit</button>
+                                    <button class="btn btn-danger" style="padding: 0.5rem 1rem;" data-action="remove">Remove</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>🌊 Solana</td>
+                            <td style="font-family: monospace;">7xKW...9mPQ</td>
+                            <td><span class="badge badge-primary">Resolver</span></td>
+                            <td><span class="badge badge-success">Verified</span></td>
+                            <td>
+                                <div class="flex gap-1">
+                                    <button class="btn btn-secondary" style="padding: 0.5rem 1rem;" data-action="edit">Edit</button>
+                                    <button class="btn btn-danger" style="padding: 0.5rem 1rem;" data-action="remove">Remove</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>🌀 Sui</td>
+                            <td style="font-family: monospace;">0xC3F2...8A1D</td>
+                            <td><span class="badge badge-primary">Resolver</span></td>
+                            <td><span class="badge badge-success">Verified</span></td>
+                            <td>
+                                <div class="flex gap-1">
+                                    <button class="btn btn-secondary" style="padding: 0.5rem 1rem;" data-action="edit">Edit</button>
+                                    <button class="btn btn-danger" style="padding: 0.5rem 1rem;" data-action="remove">Remove</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>🅰️ Aptos</td>
+                            <td style="font-family: monospace;">0x7B5E...3F9A</td>
+                            <td><span class="badge badge-primary">Resolver</span></td>
+                            <td><span class="badge badge-success">Verified</span></td>
+                            <td>
+                                <div class="flex gap-1">
+                                    <button class="btn btn-secondary" style="padding: 0.5rem 1rem;" data-action="edit">Edit</button>
+                                    <button class="btn btn-danger" style="padding: 0.5rem 1rem;" data-action="remove">Remove</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>🟡 BNB Chain</td>
+                            <td style="font-family: monospace;">0x4D8F...2E6C</td>
+                            <td><span class="badge badge-primary">Resolver</span></td>
+                            <td><span class="badge badge-success">Verified</span></td>
+                            <td>
+                                <div class="flex gap-1">
+                                    <button class="btn btn-secondary" style="padding: 0.5rem 1rem;" data-action="edit">Edit</button>
+                                    <button class="btn btn-danger" style="padding: 0.5rem 1rem;" data-action="remove">Remove</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex gap-2 mt-4">
+            <a href="/add-chain?domain=johndoe" class="btn btn-primary">Add New Chain</a>
+            <a href="/edit-records?domain=johndoe" class="btn btn-secondary">Edit All Records</a>
+            <button class="btn btn-outline" data-action="export">Export Wallets</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

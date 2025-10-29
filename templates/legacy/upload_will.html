@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+
+{% block title %}Upload Will - EverName{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1 class="card-title">📄 Upload Legacy Will</h1>
+            <p class="card-subtitle">Add video or document instructions for your delegates (Premium Feature)</p>
+        </div>
+
+        <!-- Premium Feature Banner -->
+        <div class="alert alert-info mb-4">
+            <strong>💎 Premium Feature:</strong> Video will upload and document storage are available exclusively to Premium tier members
+        </div>
+
+        <!-- Upload Options -->
+        <div class="card-grid mb-4">
+            <div class="card" style="background: var(--bg-dark); cursor: pointer;" onclick="document.getElementById('video-section').style.display='block'">
+                <div style="text-align: center;">
+                    <div style="font-size: 4rem; margin-bottom: 1rem;">🎥</div>
+                    <h3 style="margin-bottom: 0.5rem;">Video Will</h3>
+                    <p class="text-muted">Record or upload a video message for your delegates</p>
+                </div>
+            </div>
+
+            <div class="card" style="background: var(--bg-dark); cursor: pointer;" onclick="document.getElementById('document-section').style.display='block'">
+                <div style="text-align: center;">
+                    <div style="font-size: 4rem; margin-bottom: 1rem;">📋</div>
+                    <h3 style="margin-bottom: 0.5rem;">Written Will</h3>
+                    <p class="text-muted">Upload scanned documents or PDFs</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Upload Section -->
+        <div class="card mb-4" style="background: var(--bg-dark); display: none;" id="video-section">
+            <h3 style="margin-bottom: 1.5rem;">🎥 Video Will Upload</h3>
+
+            <div class="form-group">
+                <label class="form-label">Video File</label>
+                <div style="border: 2px dashed var(--border-color); border-radius: 1rem; padding: 3rem; text-align: center; cursor: pointer;" onclick="document.getElementById('video-file').click()">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">📤</div>
+                    <p style="font-weight: 600; margin-bottom: 0.5rem;">Click to upload or drag and drop</p>
+                    <p class="text-muted" style="font-size: 0.9rem;">MP4, MOV, AVI (Max 500MB)</p>
+                    <input type="file" id="video-file" accept="video/*" style="display: none;">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Video Title</label>
+                <input type="text" class="form-input" placeholder="e.g., Final Instructions for My Family">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Description (Optional)</label>
+                <textarea class="form-textarea" placeholder="Add context or notes about this video..."></textarea>
+            </div>
+
+            <div class="alert alert-warning">
+                <strong>Privacy:</strong> Your video will be encrypted and only accessible to your delegates after legacy execution
+            </div>
+
+            <button class="btn btn-primary btn-large">Upload Video</button>
+        </div>
+
+        <!-- Document Upload Section -->
+        <div class="card mb-4" style="background: var(--bg-dark); display: none;" id="document-section">
+            <h3 style="margin-bottom: 1.5rem;">📋 Written Will Upload</h3>
+
+            <div class="form-group">
+                <label class="form-label">Document File</label>
+                <div style="border: 2px dashed var(--border-color); border-radius: 1rem; padding: 3rem; text-align: center; cursor: pointer;" onclick="document.getElementById('doc-file').click()">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">📤</div>
+                    <p style="font-weight: 600; margin-bottom: 0.5rem;">Click to upload or drag and drop</p>
+                    <p class="text-muted" style="font-size: 0.9rem;">PDF, DOC, DOCX, JPG, PNG (Max 50MB)</p>
+                    <input type="file" id="doc-file" accept=".pdf,.doc,.docx,image/*" style="display: none;">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Document Title</label>
+                <input type="text" class="form-input" placeholder="e.g., Last Will and Testament">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Document Type</label>
+                <select class="form-select">
+                    <option>Legal Will</option>
+                    <option>Instructions Letter</option>
+                    <option>Asset Inventory</option>
+                    <option>Personal Message</option>
+                    <option>Other</option>
+                </select>
+            </div>
+
+            <div class="alert alert-warning">
+                <strong>Privacy:</strong> All documents are encrypted and only accessible to your delegates after legacy execution
+            </div>
+
+            <button class="btn btn-primary btn-large">Upload Document</button>
+        </div>
+
+        <!-- Existing Files -->
+        <div class="card" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1.5rem;">📁 Uploaded Files</h3>
+
+            <div class="card mb-3" style="background: var(--bg-card);">
+                <div class="flex" style="justify-content: space-between; align-items: center;">
+                    <div class="flex" style="gap: 1rem; align-items: center;">
+                        <span style="font-size: 2.5rem;">🎥</span>
+                        <div>
+                            <h4 style="margin-bottom: 0.25rem;">Video Will</h4>
+                            <p class="text-muted" style="font-size: 0.9rem; margin: 0;">Uploaded: Jan 15, 2024 • Duration: 4:32 • 125MB</p>
+                        </div>
+                    </div>
+                    <div class="flex" style="gap: 1rem; align-items: center;">
+                        <span class="badge badge-success">Encrypted</span>
+                        <button class="btn btn-secondary">Preview</button>
+                        <button class="btn btn-danger">Delete</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="background: var(--bg-card);">
+                <div class="flex" style="justify-content: space-between; align-items: center;">
+                    <div class="flex" style="gap: 1rem; align-items: center;">
+                        <span style="font-size: 2.5rem;">📋</span>
+                        <div>
+                            <h4 style="margin-bottom: 0.25rem;">Written Instructions</h4>
+                            <p class="text-muted" style="font-size: 0.9rem; margin: 0;">Last updated: Feb 20, 2024 • PDF • 2.5MB</p>
+                        </div>
+                    </div>
+                    <div class="flex" style="gap: 1rem; align-items: center;">
+                        <span class="badge badge-success">Encrypted</span>
+                        <button class="btn btn-secondary">View</button>
+                        <button class="btn btn-danger">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex gap-2 mt-4">
+            <a href="/legacy/overview" class="btn btn-primary">Back to Overview</a>
+            <button class="btn btn-outline" data-action="download-all">Download All</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,241 @@
+{% extends "base.html" %}
+
+{% block title %}Emergency Recovery - EverName{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card" style="border: 3px solid var(--danger-color);">
+        <div style="background: rgba(239, 68, 68, 0.1); padding: 3rem; text-align: center; border-radius: 1rem 1rem 0 0;">
+            <div style="font-size: 6rem; margin-bottom: 1rem;">🚨</div>
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--danger-color);">Emergency Account Recovery</h1>
+            <p style="font-size: 1.2rem; color: var(--text-secondary);">Regain access to your account through backup verification</p>
+        </div>
+
+        <div class="card-header">
+            <h2 class="card-title">Account Recovery Process</h2>
+            <p class="card-subtitle">Use this process if you've lost access to your primary wallet or need to stop legacy execution</p>
+        </div>
+
+        <!-- Warning -->
+        <div class="alert alert-danger mb-4">
+            <strong>⚠️ Security Notice:</strong> This is a high-security process requiring multiple verification steps. Recovery may take up to 24-48 hours to complete for security reasons.
+        </div>
+
+        <!-- Recovery Options -->
+        <div class="card mb-4" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1.5rem;">🔐 Choose Recovery Method</h3>
+
+            <div class="card mb-3" style="cursor: pointer; border: 2px solid var(--border-color);" onclick="showMethod('backup-phrase')">
+                <div class="flex" style="justify-content: space-between; align-items: center;">
+                    <div class="flex" style="gap: 1rem; align-items: center;">
+                        <span style="font-size: 2rem;">🗝️</span>
+                        <div>
+                            <h4 style="margin-bottom: 0.25rem;">Recovery Phrase</h4>
+                            <p class="text-muted" style="margin: 0; font-size: 0.9rem;">Use your 12 or 24-word backup phrase</p>
+                        </div>
+                    </div>
+                    <span class="badge badge-success">Recommended</span>
+                </div>
+            </div>
+
+            <div class="card mb-3" style="cursor: pointer; border: 2px solid var(--border-color);" onclick="showMethod('email-sms')">
+                <div class="flex" style="justify-content: space-between; align-items: center;">
+                    <div class="flex" style="gap: 1rem; align-items: center;">
+                        <span style="font-size: 2rem;">📧</span>
+                        <div>
+                            <h4 style="margin-bottom: 0.25rem;">Email + SMS Verification</h4>
+                            <p class="text-muted" style="margin: 0; font-size: 0.9rem;">Verify through registered email and phone</p>
+                        </div>
+                    </div>
+                    <span class="badge badge-primary">24hr delay</span>
+                </div>
+            </div>
+
+            <div class="card mb-3" style="cursor: pointer; border: 2px solid var(--border-color);" onclick="showMethod('delegate')">
+                <div class="flex" style="justify-content: space-between; align-items: center;">
+                    <div class="flex" style="gap: 1rem; align-items: center;">
+                        <span style="font-size: 2rem;">👥</span>
+                        <div>
+                            <h4 style="margin-bottom: 0.25rem;">Delegate Verification</h4>
+                            <p class="text-muted" style="margin: 0; font-size: 0.9rem;">Recovery with help from your delegates</p>
+                        </div>
+                    </div>
+                    <span class="badge badge-primary">48hr delay</span>
+                </div>
+            </div>
+
+            <div class="card" style="cursor: pointer; border: 2px solid var(--border-color);" onclick="showMethod('support')">
+                <div class="flex" style="justify-content: space-between; align-items: center;">
+                    <div class="flex" style="gap: 1rem; align-items: center;">
+                        <span style="font-size: 2rem;">🎫</span>
+                        <div>
+                            <h4 style="margin-bottom: 0.25rem;">Support Ticket</h4>
+                            <p class="text-muted" style="margin: 0; font-size: 0.9rem;">Manual review by support team</p>
+                        </div>
+                    </div>
+                    <span class="badge badge-warning">3-5 days</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recovery Phrase Method -->
+        <div class="card mb-4" style="background: var(--bg-dark); display: none;" id="backup-phrase-method">
+            <h3 style="margin-bottom: 1.5rem;">🗝️ Recovery Phrase Verification</h3>
+
+            <div class="form-group">
+                <label class="form-label">Enter Your Recovery Phrase</label>
+                <textarea class="form-textarea" rows="4" placeholder="Enter your 12 or 24-word recovery phrase separated by spaces"></textarea>
+                <p class="text-muted" style="font-size: 0.85rem; margin-top: 0.5rem;">
+                    This phrase was provided when you first created your account. Keep it secure - anyone with this phrase can access your account.
+                </p>
+            </div>
+
+            <div class="alert alert-info">
+                Using your recovery phrase provides instant account access after verification.
+            </div>
+
+            <button class="btn btn-primary btn-large">Verify Recovery Phrase</button>
+        </div>
+
+        <!-- Email + SMS Method -->
+        <div class="card mb-4" style="background: var(--bg-dark); display: none;" id="email-sms-method">
+            <h3 style="margin-bottom: 1.5rem;">📧 Email & SMS Verification</h3>
+
+            <div class="form-group">
+                <label class="form-label">Registered Email</label>
+                <input type="email" class="form-input" placeholder="john.doe@example.com">
+                <p class="text-muted" style="font-size: 0.85rem; margin-top: 0.5rem;">
+                    A verification code will be sent to this email
+                </p>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Registered Phone</label>
+                <input type="tel" class="form-input" placeholder="+1 (555) 123-4567">
+                <p class="text-muted" style="font-size: 0.85rem; margin-top: 0.5rem;">
+                    A verification code will be sent via SMS
+                </p>
+            </div>
+
+            <div class="alert alert-warning">
+                <strong>Security Delay:</strong> This method has a 24-hour security delay to prevent unauthorized access. You'll receive access after the delay period.
+            </div>
+
+            <button class="btn btn-primary btn-large">Send Verification Codes</button>
+        </div>
+
+        <!-- Delegate Method -->
+        <div class="card mb-4" style="background: var(--bg-dark); display: none;" id="delegate-method">
+            <h3 style="margin-bottom: 1.5rem;">👥 Delegate-Assisted Recovery</h3>
+
+            <p class="text-muted" style="margin-bottom: 1.5rem;">
+                Request verification from your designated delegates. At least 2 out of 3 delegates must approve your recovery request.
+            </p>
+
+            <div class="card mb-3" style="background: var(--bg-card);">
+                <div class="flex" style="justify-content: space-between; align-items: center;">
+                    <div>
+                        <strong>Sarah Johnson</strong> (sarah.ever)
+                        <p class="text-muted" style="margin: 0; font-size: 0.9rem;">Primary Delegate</p>
+                    </div>
+                    <span class="badge badge-primary">Pending</span>
+                </div>
+            </div>
+
+            <div class="card mb-3" style="background: var(--bg-card);">
+                <div class="flex" style="justify-content: space-between; align-items: center;">
+                    <div>
+                        <strong>Michael Chen</strong> (mchen.ever)
+                        <p class="text-muted" style="margin: 0; font-size: 0.9rem;">Secondary Delegate</p>
+                    </div>
+                    <span class="badge badge-primary">Pending</span>
+                </div>
+            </div>
+
+            <div class="card mb-3" style="background: var(--bg-card);">
+                <div class="flex" style="justify-content: space-between; align-items: center;">
+                    <div>
+                        <strong>Emily Rodriguez</strong> (emily.ever)
+                        <p class="text-muted" style="margin: 0; font-size: 0.9rem;">Tertiary Delegate</p>
+                    </div>
+                    <span class="badge badge-primary">Pending</span>
+                </div>
+            </div>
+
+            <div class="alert alert-warning">
+                <strong>Security Delay:</strong> This method requires 48 hours for delegate responses and has an additional 24-hour security hold.
+            </div>
+
+            <button class="btn btn-primary btn-large">Request Delegate Verification</button>
+        </div>
+
+        <!-- Support Method -->
+        <div class="card mb-4" style="background: var(--bg-dark); display: none;" id="support-method">
+            <h3 style="margin-bottom: 1.5rem;">🎫 Support Ticket Recovery</h3>
+
+            <div class="form-group">
+                <label class="form-label">Your Name</label>
+                <input type="text" class="form-input" placeholder="Full legal name">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Domain/Account</label>
+                <input type="text" class="form-input" placeholder="johndoe.ever">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Contact Email</label>
+                <input type="email" class="form-input" placeholder="Reachable email address">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Describe Your Situation</label>
+                <textarea class="form-textarea" rows="6" placeholder="Explain why you need account recovery and provide any relevant details..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Upload Identity Verification (Optional)</label>
+                <div style="border: 2px dashed var(--border-color); border-radius: 1rem; padding: 2rem; text-align: center; cursor: pointer;">
+                    <p style="font-weight: 600; margin-bottom: 0.5rem;">Upload ID or proof of ownership</p>
+                    <p class="text-muted" style="font-size: 0.9rem;">Speeds up verification process</p>
+                </div>
+            </div>
+
+            <div class="alert alert-warning">
+                <strong>Processing Time:</strong> Support tickets typically take 3-5 business days for manual review and verification.
+            </div>
+
+            <button class="btn btn-primary btn-large">Submit Support Ticket</button>
+        </div>
+
+        <!-- What to Expect -->
+        <div class="card" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1.5rem;">📋 What Happens After Recovery?</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border-color);">
+                    ✅ Full account access restored
+                </li>
+                <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border-color);">
+                    ✅ Legacy execution halted (if in progress)
+                </li>
+                <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border-color);">
+                    ✅ Inactivity counter reset
+                </li>
+                <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border-color);">
+                    ✅ Security audit log created
+                </li>
+                <li style="padding: 0.75rem 0;">
+                    ✅ Delegates notified of successful recovery
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+function showMethod(method) {
+    document.querySelectorAll('[id$="-method"]').forEach(el => el.style.display = 'none');
+    document.getElementById(method + '-method').style.display = 'block';
+}
+</script>
+{% endblock %}

@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+
+{% block title %}Subscription Status - EverName{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1 class="card-title">💎 Subscription & Renewal Status</h1>
+            <p class="card-subtitle">Manage your EverName subscription tier and benefits</p>
+        </div>
+
+        <!-- Current Tier -->
+        <div class="alert alert-success mb-4">
+            <div class="flex" style="justify-content: space-between; align-items: center;">
+                <div>
+                    <h3 style="margin-bottom: 0.5rem;">Premium Tier</h3>
+                    <p style="margin: 0; opacity: 0.9;">Active until March 15, 2026</p>
+                </div>
+                <span class="badge badge-success" style="font-size: 1rem; padding: 0.5rem 1rem;">ACTIVE</span>
+            </div>
+        </div>
+
+        <!-- Tier Benefits -->
+        <div class="card-grid">
+            <div class="card" style="background: var(--bg-dark);">
+                <h3 style="margin-bottom: 1rem;">🎯 Current Benefits</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+                        ✅ Unlimited domains
+                    </li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+                        ✅ Multi-chain support (10+ chains)
+                    </li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+                        ✅ Advanced legacy features
+                    </li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+                        ✅ Multi-delegate support
+                    </li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+                        ✅ Video will upload
+                    </li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+                        ✅ Priority notifications
+                    </li>
+                    <li style="padding: 0.5rem 0;">
+                        ✅ 15% NIL token discount
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card" style="background: var(--bg-dark);">
+                <h3 style="margin-bottom: 1rem;">🪙 NIL Token Benefits</h3>
+                <div class="stat-card" style="margin-bottom: 1rem;">
+                    <div class="stat-value">15%</div>
+                    <div class="stat-label">Registration Discount</div>
+                </div>
+                <div class="stat-card" style="margin-bottom: 1rem;">
+                    <div class="stat-value">1,250</div>
+                    <div class="stat-label">NIL Tokens Held</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">$0.00</div>
+                    <div class="stat-label">Annual Renewal Cost</div>
+                </div>
+                <p class="text-muted mt-3" style="font-size: 0.9rem;">
+                    Hold 1000+ NIL tokens to maintain Premium tier benefits
+                </p>
+            </div>
+        </div>
+
+        <!-- Renewal Information -->
+        <div class="card mt-4" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1rem;">📅 Renewal Information</h3>
+            <div class="stats-grid">
+                <div>
+                    <label class="form-label">Next Renewal Date</label>
+                    <p style="font-size: 1.25rem; font-weight: 600; color: var(--success-color);">March 15, 2026</p>
+                </div>
+                <div>
+                    <label class="form-label">Days Remaining</label>
+                    <p style="font-size: 1.25rem; font-weight: 600; color: var(--primary-light);">456 days</p>
+                </div>
+                <div>
+                    <label class="form-label">Auto-Renewal</label>
+                    <p style="font-size: 1.25rem; font-weight: 600; color: var(--success-color);">Enabled</p>
+                </div>
+                <div>
+                    <label class="form-label">Payment Method</label>
+                    <p style="font-size: 1.25rem; font-weight: 600;">NIL Tokens</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tier Comparison -->
+        <div class="card mt-4" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1rem;">📊 Tier Comparison</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Free</th>
+                            <th>Standard</th>
+                            <th>Premium</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Domains</td>
+                            <td>1</td>
+                            <td>5</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td>Chain Support</td>
+                            <td>EVM</td>
+                            <td>5 chains</td>
+                            <td>10+ chains</td>
+                        </tr>
+                        <tr>
+                            <td>Delegates</td>
+                            <td>1</td>
+                            <td>3</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td>Video Will</td>
+                            <td>❌</td>
+                            <td>❌</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td>NIL Discount</td>
+                            <td>0%</td>
+                            <td>10%</td>
+                            <td>15%</td>
+                        </tr>
+                        <tr>
+                            <td>Annual Cost</td>
+                            <td>Free</td>
+                            <td>$49</td>
+                            <td>$0 (1000+ NIL)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex gap-2 mt-4">
+            <button class="btn btn-primary" data-action="manage-tokens">Manage NIL Tokens</button>
+            <button class="btn btn-secondary" data-action="toggle-auto-renewal">Disable Auto-Renewal</button>
+            <button class="btn btn-outline" data-action="view-history">View Payment History</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

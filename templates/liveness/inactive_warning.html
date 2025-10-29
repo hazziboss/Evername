@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+
+{% block title %}Inactivity Warning - EverName{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card" style="border: 3px solid var(--warning-color);">
+        <div style="background: rgba(245, 158, 11, 0.1); padding: 3rem; text-align: center; border-radius: 1rem 1rem 0 0;">
+            <div style="font-size: 6rem; margin-bottom: 1rem;">⚠️</div>
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--warning-color);">Inactivity Detected</h1>
+            <p style="font-size: 1.2rem; color: var(--text-secondary);">You have reached your inactivity threshold</p>
+        </div>
+
+        <div class="card-header">
+            <h2 class="card-title">Grace Period Active</h2>
+            <p class="card-subtitle">Your legacy plan will execute unless you confirm you're still active</p>
+        </div>
+
+        <!-- Countdown Timer -->
+        <div class="card mb-4" style="background: var(--bg-dark); text-align: center;">
+            <h3 style="margin-bottom: 2rem;">⏱️ Time Remaining</h3>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; max-width: 600px; margin: 0 auto 2rem;">
+                <div>
+                    <div style="font-size: 3rem; font-weight: 700; color: var(--warning-color);">44</div>
+                    <div class="text-muted">Days</div>
+                </div>
+                <div>
+                    <div style="font-size: 3rem; font-weight: 700; color: var(--warning-color);">23</div>
+                    <div class="text-muted">Hours</div>
+                </div>
+                <div>
+                    <div style="font-size: 3rem; font-weight: 700; color: var(--warning-color);">15</div>
+                    <div class="text-muted">Minutes</div>
+                </div>
+                <div>
+                    <div style="font-size: 3rem; font-weight: 700; color: var(--warning-color);">32</div>
+                    <div class="text-muted">Seconds</div>
+                </div>
+            </div>
+            <div class="progress-container" style="height: 20px;">
+                <div class="progress-bar" style="width: 98%; background: var(--warning-color);"></div>
+            </div>
+            <p class="text-muted mt-2">Grace period ends on April 15, 2024 at 3:30 PM</p>
+        </div>
+
+        <!-- Inactivity Summary -->
+        <div class="card mb-4" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1.5rem;">📊 Inactivity Summary</h3>
+            <div style="margin-bottom: 1.5rem;">
+                <div class="flex" style="justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid var(--border-color);">
+                    <span>Last Account Activity:</span>
+                    <strong>December 15, 2023</strong>
+                </div>
+                <div class="flex" style="justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid var(--border-color);">
+                    <span>Days Inactive:</span>
+                    <strong style="color: var(--warning-color);">180 / 180</strong>
+                </div>
+                <div class="flex" style="justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid var(--border-color);">
+                    <span>Threshold Reached:</span>
+                    <strong>March 1, 2024</strong>
+                </div>
+                <div class="flex" style="justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid var(--border-color);">
+                    <span>Grace Period:</span>
+                    <strong>45 days</strong>
+                </div>
+                <div class="flex" style="justify-content: space-between; padding: 1rem 0;">
+                    <span>Legacy Execution Date:</span>
+                    <strong style="color: var(--danger-color);">April 15, 2024</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- What Happens Next -->
+        <div class="card mb-4" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1.5rem;">🔔 What Happens Next?</h3>
+            <div style="display: grid; gap: 1rem;">
+                <div style="padding: 1rem; background: var(--bg-card); border-left: 4px solid var(--warning-color); border-radius: 0.5rem;">
+                    <strong style="color: var(--warning-color);">1. Grace Period (Current Stage)</strong>
+                    <p class="text-muted" style="margin: 0.5rem 0 0;">You have 45 days to confirm you're still active before legacy execution begins</p>
+                </div>
+                <div style="padding: 1rem; background: var(--bg-card); border-left: 4px solid var(--text-muted); border-radius: 0.5rem;">
+                    <strong>2. Delegate Notification</strong>
+                    <p class="text-muted" style="margin: 0.5rem 0 0;">Your delegates have been notified about the grace period and will receive regular updates</p>
+                </div>
+                <div style="padding: 1rem; background: var(--bg-card); border-left: 4px solid var(--text-muted); border-radius: 0.5rem;">
+                    <strong>3. Legacy Execution</strong>
+                    <p class="text-muted" style="margin: 0.5rem 0 0;">If grace period expires, your digital assets will be transferred to designated delegates according to your plan</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notifications Sent -->
+        <div class="card mb-4" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1.5rem;">📧 Notifications Sent</h3>
+            <div class="alert alert-warning">
+                We've sent multiple notifications to all your registered contacts:
+            </div>
+            <ul style="list-style: none; padding: 0;">
+                <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border-color);">
+                    ✅ <strong>Email:</strong> john.doe@example.com (12 reminders sent)
+                </li>
+                <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border-color);">
+                    ✅ <strong>SMS:</strong> +1 (555) 123-4567 (8 reminders sent)
+                </li>
+                <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border-color);">
+                    ✅ <strong>Push:</strong> 2 devices (15 reminders sent)
+                </li>
+                <li style="padding: 0.75rem 0;">
+                    ✅ <strong>Delegates Notified:</strong> All 3 delegates (Sarah, Michael, Emily)
+                </li>
+            </ul>
+        </div>
+
+        <!-- Cancel Actions -->
+        <div style="background: var(--gradient-2); padding: 3rem; border-radius: 1rem; text-align: center;">
+            <h2 style="color: white; margin-bottom: 1rem;">Are You Still Active?</h2>
+            <p style="color: white; opacity: 0.9; margin-bottom: 2rem; font-size: 1.1rem;">
+                Click the button below to confirm you're still active and cancel the legacy execution process
+            </p>
+            <a href="/im-alive" class="btn btn-large" style="background: white; color: var(--success-color); padding: 1.5rem 4rem; font-size: 1.25rem; font-weight: 700;">
+                Yes, I'm Still Here!
+            </a>
+        </div>
+
+        <!-- Support -->
+        <div class="card mt-4" style="background: var(--bg-dark);">
+            <h4 style="margin-bottom: 1rem;">Need Help?</h4>
+            <p class="text-muted" style="margin-bottom: 1rem;">
+                If you're having trouble accessing your account or need assistance, please contact support immediately.
+            </p>
+            <div class="flex gap-2">
+                <button class="btn btn-secondary">Contact Support</button>
+                <button class="btn btn-outline">Request Extension</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

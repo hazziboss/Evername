@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block title %}Identity Health - EverName{% endblock %}
+{% block content %}
+<div class="container" style="max-width: 1000px;">
+    <h1 style="margin-bottom: 2rem;">Identity Liveness Meter</h1>
+
+    <div class="card" style="text-align: center; padding: 3rem;">
+        <div style="margin-bottom: 2rem;">
+            <div style="width: 200px; height: 200px; margin: 0 auto; border: 10px solid var(--success-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                <div style="font-size: 3rem; font-weight: 800; color: var(--success-color);">98%</div>
+                <div style="color: var(--text-muted);">Health Score</div>
+            </div>
+        </div>
+        <h2 style="color: var(--success-color); margin-bottom: 0.5rem;">Excellent Health</h2>
+        <p style="color: var(--text-secondary);">Your identity is active and all systems are operational</p>
+    </div>
+
+    <div class="card-grid" style="margin-top: 2rem;">
+        <div class="card">
+            <h3>📊 Activity Metrics</h3>
+            <div style="margin-top: 1.5rem;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                    <span>Last Activity:</span>
+                    <strong>2 hours ago</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                    <span>Login Frequency:</span>
+                    <strong>Daily</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                    <span>Liveness Streak:</span>
+                    <strong>45 days</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <span>Next Check:</span>
+                    <strong>Dec 1, 2024</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>🔐 Security Status</h3>
+            <div style="margin-top: 1.5rem;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; align-items: center;">
+                    <span>Nillion Encryption:</span>
+                    <span class="badge badge-success">Active</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; align-items: center;">
+                    <span>Wallet Status:</span>
+                    <span class="badge badge-success">Connected</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; align-items: center;">
+                    <span>2FA Enabled:</span>
+                    <span class="badge badge-warning">Recommended</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span>Backup Status:</span>
+                    <span class="badge badge-success">Complete</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" style="margin-top: 2rem;">
+        <h3 style="margin-bottom: 1.5rem;">📈 Activity Timeline (Last 30 Days)</h3>
+        <div style="display: flex; gap: 0.25rem; height: 100px; align-items: flex-end;">
+            <div style="flex: 1; background: var(--success-color); height: 80%; border-radius: 4px;" title="Day 1"></div>
+            <div style="flex: 1; background: var(--success-color); height: 60%; border-radius: 4px;" title="Day 2"></div>
+            <div style="flex: 1; background: var(--success-color); height: 90%; border-radius: 4px;" title="Day 3"></div>
+            <div style="flex: 1; background: var(--success-color); height: 70%; border-radius: 4px;" title="Day 4"></div>
+            <div style="flex: 1; background: var(--success-color); height: 85%; border-radius: 4px;" title="Day 5"></div>
+            <div style="flex: 1; background: var(--success-color); height: 95%; border-radius: 4px;" title="Day 6"></div>
+            <div style="flex: 1; background: var(--success-color); height: 100%; border-radius: 4px;" title="Day 7"></div>
+            <div style="flex: 1; background: var(--success-color); height: 75%; border-radius: 4px;" title="Day 8"></div>
+            <div style="flex: 1; background: var(--success-color); height: 80%; border-radius: 4px;" title="Day 9"></div>
+            <div style="flex: 1; background: var(--success-color); height: 85%; border-radius: 4px;" title="Day 10"></div>
+        </div>
+        <p style="text-align: center; margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+            Showing last 10 days of activity
+        </p>
+    </div>
+
+    <div class="alert alert-info" style="margin-top: 2rem;">
+        <strong>💡 Tip:</strong> Regular activity keeps your identity health score high and prevents accidental legacy triggers.
+        We recommend confirming liveness at least once per month.
+    </div>
+</div>
+{% endblock %}

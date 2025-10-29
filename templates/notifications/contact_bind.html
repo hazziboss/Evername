@@ -1,0 +1,171 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Binding - EverName{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1 class="card-title">📞 Contact Binding</h1>
+            <p class="card-subtitle">Link and verify your contact methods for notifications</p>
+        </div>
+
+        <!-- Current Contacts -->
+        <div class="card-grid mb-4">
+            <div class="card" style="background: var(--bg-dark);">
+                <div class="flex" style="justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <h3 style="margin: 0;">📧 Email</h3>
+                    <span class="badge badge-success">Verified</span>
+                </div>
+                <p style="font-weight: 600; margin-bottom: 0.5rem;">john.doe@example.com</p>
+                <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 1rem;">Verified on: Jan 15, 2024</p>
+                <div class="flex gap-2">
+                    <button class="btn btn-secondary btn-block" data-action="change-email">Change</button>
+                    <button class="btn btn-outline btn-block" data-action="test-email">Test</button>
+                </div>
+            </div>
+
+            <div class="card" style="background: var(--bg-dark);">
+                <div class="flex" style="justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <h3 style="margin: 0;">📱 SMS</h3>
+                    <span class="badge badge-success">Verified</span>
+                </div>
+                <p style="font-weight: 600; margin-bottom: 0.5rem;">+1 (555) 123-4567</p>
+                <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 1rem;">Verified on: Jan 20, 2024</p>
+                <div class="flex gap-2">
+                    <button class="btn btn-secondary btn-block" data-action="change-phone">Change</button>
+                    <button class="btn btn-outline btn-block" data-action="test-sms">Test</button>
+                </div>
+            </div>
+
+            <div class="card" style="background: var(--bg-dark);">
+                <div class="flex" style="justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <h3 style="margin: 0;">🔔 Push</h3>
+                    <span class="badge badge-success">Enabled</span>
+                </div>
+                <p style="font-weight: 600; margin-bottom: 0.5rem;">2 devices registered</p>
+                <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 1rem;">Chrome Browser, iPhone 13</p>
+                <div class="flex gap-2">
+                    <button class="btn btn-secondary btn-block" data-action="manage-devices">Manage</button>
+                    <button class="btn btn-outline btn-block" data-action="test-push">Test</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add New Email -->
+        <div class="card mb-4" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1.5rem;">📧 Add/Change Email</h3>
+            <form data-action="update-email">
+                <div class="form-group">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-input" placeholder="Enter new email address">
+                </div>
+                <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 1rem;">
+                    A verification code will be sent to this email address. You'll need to verify before this email becomes active for notifications.
+                </p>
+                <button class="btn btn-primary">Send Verification Code</button>
+            </form>
+        </div>
+
+        <!-- Add New Phone -->
+        <div class="card mb-4" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1.5rem;">📱 Add/Change Phone Number</h3>
+            <form data-action="update-phone">
+                <div class="form-group">
+                    <label class="form-label">Country Code</label>
+                    <select class="form-select">
+                        <option>+1 (United States)</option>
+                        <option>+44 (United Kingdom)</option>
+                        <option>+91 (India)</option>
+                        <option>+86 (China)</option>
+                        <option>+81 (Japan)</option>
+                        <option>+49 (Germany)</option>
+                        <option>+33 (France)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Phone Number</label>
+                    <input type="tel" class="form-input" placeholder="Enter phone number">
+                </div>
+                <div class="alert alert-warning">
+                    <strong>Note:</strong> SMS notifications may incur carrier charges. Standard messaging rates apply.
+                </div>
+                <button class="btn btn-primary">Send Verification Code</button>
+            </form>
+        </div>
+
+        <!-- Verification -->
+        <div class="card mb-4" style="background: var(--bg-dark); display: none;" id="verification-card">
+            <h3 style="margin-bottom: 1.5rem;">🔐 Verify Contact</h3>
+            <form data-action="verify-code">
+                <div class="form-group">
+                    <label class="form-label">Verification Code</label>
+                    <input type="text" class="form-input" placeholder="Enter 6-digit code" maxlength="6">
+                </div>
+                <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 1rem;">
+                    Didn't receive the code? <a href="#" style="color: var(--primary-light);">Resend code</a>
+                </p>
+                <button class="btn btn-primary">Verify</button>
+            </form>
+        </div>
+
+        <!-- Push Notification Devices -->
+        <div class="card" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1.5rem;">🔔 Push Notification Devices</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Device</th>
+                            <th>Browser/OS</th>
+                            <th>Last Active</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="flex" style="align-items: center; gap: 0.5rem;">
+                                    💻 MacBook Pro
+                                </div>
+                            </td>
+                            <td>Chrome on macOS</td>
+                            <td>2 hours ago</td>
+                            <td><span class="badge badge-success">Active</span></td>
+                            <td>
+                                <button class="btn btn-danger" style="padding: 0.5rem 1rem;">Remove</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="flex" style="align-items: center; gap: 0.5rem;">
+                                    📱 iPhone 13
+                                </div>
+                            </td>
+                            <td>Safari on iOS 17</td>
+                            <td>1 day ago</td>
+                            <td><span class="badge badge-success">Active</span></td>
+                            <td>
+                                <button class="btn btn-danger" style="padding: 0.5rem 1rem;">Remove</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button class="btn btn-secondary mt-3" data-action="add-device">Add This Device</button>
+        </div>
+
+        <!-- Security Notice -->
+        <div class="alert alert-info mt-4">
+            <strong>🔒 Security:</strong> All contact information is encrypted and stored securely. Your delegates will only be able to contact you through these verified channels during legacy events.
+        </div>
+
+        <!-- Actions -->
+        <div class="flex gap-2 mt-4">
+            <a href="/notification-settings" class="btn btn-primary">Back to Notification Settings</a>
+            <button class="btn btn-outline" data-action="export-contacts">Export Contact Info</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

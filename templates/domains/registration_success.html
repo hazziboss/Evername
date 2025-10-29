@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% block title %}Registration Successful - EverName{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card" style="text-align: center; padding: 4rem 2rem;">
+        <!-- Success Animation -->
+        <div style="font-size: 6rem; margin-bottom: 2rem; animation: bounce 0.5s;">✅</div>
+
+        <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Congratulations!</h1>
+        <p style="font-size: 1.3rem; color: var(--text-secondary); margin-bottom: 3rem;">
+            Your domain <strong style="color: var(--primary-light);">johndoe.ever</strong> has been successfully registered
+        </p>
+
+        <!-- Transaction Details -->
+        <div class="card" style="background: var(--bg-dark); max-width: 600px; margin: 0 auto 2rem; text-align: left;">
+            <h3 style="margin-bottom: 1.5rem; text-align: center;">📋 Registration Details</h3>
+            <div style="margin-bottom: 1rem;">
+                <div class="flex" style="justify-content: space-between; padding: 0.75rem 0; border-bottom: 1px solid var(--border-color);">
+                    <span class="text-muted">Domain:</span>
+                    <span style="font-weight: 600;">johndoe.ever</span>
+                </div>
+                <div class="flex" style="justify-content: space-between; padding: 0.75rem 0; border-bottom: 1px solid var(--border-color);">
+                    <span class="text-muted">Registration Date:</span>
+                    <span style="font-weight: 600;">March 1, 2024</span>
+                </div>
+                <div class="flex" style="justify-content: space-between; padding: 0.75rem 0; border-bottom: 1px solid var(--border-color);">
+                    <span class="text-muted">Expiration Date:</span>
+                    <span style="font-weight: 600;">March 1, 2025</span>
+                </div>
+                <div class="flex" style="justify-content: space-between; padding: 0.75rem 0; border-bottom: 1px solid var(--border-color);">
+                    <span class="text-muted">Amount Paid:</span>
+                    <span style="font-weight: 600; color: var(--success-color);">$8.50</span>
+                </div>
+                <div class="flex" style="justify-content: space-between; padding: 0.75rem 0; border-bottom: 1px solid var(--border-color);">
+                    <span class="text-muted">Transaction ID:</span>
+                    <span style="font-weight: 600; font-family: monospace; font-size: 0.9rem;">XM3K...7YHN</span>
+                </div>
+                <div class="flex" style="justify-content: space-between; padding: 0.75rem 0;">
+                    <span class="text-muted">Auto-Renew:</span>
+                    <span style="font-weight: 600; color: var(--success-color);">Enabled</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Next Steps -->
+        <div class="card" style="background: var(--bg-dark); max-width: 600px; margin: 0 auto 2rem; text-align: left;">
+            <h3 style="margin-bottom: 1.5rem; text-align: center;">🎯 Next Steps</h3>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <div class="flex" style="align-items: flex-start; gap: 1rem;">
+                    <div style="flex-shrink: 0; width: 40px; height: 40px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: white;">1</div>
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem;">Link Your Wallets</h4>
+                        <p class="text-muted" style="font-size: 0.9rem;">Connect wallets from multiple chains to your domain</p>
+                    </div>
+                </div>
+                <div class="flex" style="align-items: flex-start; gap: 1rem;">
+                    <div style="flex-shrink: 0; width: 40px; height: 40px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: white;">2</div>
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem;">Set Up Legacy Plan</h4>
+                        <p class="text-muted" style="font-size: 0.9rem;">Protect your digital assets with legacy planning</p>
+                    </div>
+                </div>
+                <div class="flex" style="align-items: flex-start; gap: 1rem;">
+                    <div style="flex-shrink: 0; width: 40px; height: 40px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: white;">3</div>
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem;">Configure Notifications</h4>
+                        <p class="text-muted" style="font-size: 0.9rem;">Set up alerts for important domain events</p>
+                    </div>
+                </div>
+                <div class="flex" style="align-items: flex-start; gap: 1rem;">
+                    <div style="flex-shrink: 0; width: 40px; height: 40px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: white;">4</div>
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem;">Add Social Links</h4>
+                        <p class="text-muted" style="font-size: 0.9rem;">Connect your social profiles for a complete identity</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex gap-3" style="justify-content: center; flex-wrap: wrap;">
+            <a href="/domain-details?domain=johndoe" class="btn btn-primary btn-large">
+                Manage Domain
+            </a>
+            <a href="/linked-wallets?domain=johndoe" class="btn btn-secondary btn-large">
+                Link Wallets
+            </a>
+            <a href="/search" class="btn btn-outline btn-large">
+                Register Another Domain
+            </a>
+        </div>
+
+        <!-- Share -->
+        <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+            <h4 style="margin-bottom: 1rem;">🎉 Share your new domain</h4>
+            <div class="flex gap-2" style="justify-content: center;">
+                <button class="btn btn-secondary">Share on Twitter</button>
+                <button class="btn btn-secondary">Copy Link</button>
+                <button class="btn btn-secondary">Download Receipt</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+</style>
+{% endblock %}

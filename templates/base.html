@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}EverName - Decentralized Identity & Legacy{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">EverName</span>
+            </a>
+
+            <div class="nav-links">
+                <a href="/dashboard">Dashboard</a>
+                <a href="/search">Search</a>
+                <a href="/my-domains">My Domains</a>
+                <a href="/legacy">Legacy</a>
+                <div class="nav-dropdown">
+                    <button class="nav-dropdown-btn">Account ▼</button>
+                    <div class="nav-dropdown-content">
+                        <a href="/identity-health">Identity Health</a>
+                        <a href="/subscription">Subscription</a>
+                        <a href="/notification-settings">Notifications</a>
+                        <a href="/recovery">Recovery</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wallet-status">
+                <span class="status-indicator connected"></span>
+                <span id="wallet-address">0x1234...5678</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>EverName</h4>
+                <p>Decentralized identity & legacy platform powered by Nillion</p>
+            </div>
+            <div class="footer-section">
+                <h4>Platform</h4>
+                <a href="/search">Search Domains</a>
+                <a href="/marketplace">Marketplace</a>
+                <a href="/legacy">Legacy Planning</a>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <a href="#">Documentation</a>
+                <a href="#">Community</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 EverName. Powered by Nillion Network.</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

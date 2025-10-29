@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}404 - Page Not Found - EverName{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card" style="text-align: center; padding: 4rem 2rem;">
+        <!-- Error Icon -->
+        <div style="font-size: 8rem; margin-bottom: 2rem; opacity: 0.8;">🔍</div>
+
+        <!-- Error Code -->
+        <h1 style="font-size: 6rem; font-weight: 800; margin-bottom: 1rem; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+            404
+        </h1>
+
+        <!-- Error Message -->
+        <h2 style="font-size: 2rem; margin-bottom: 1rem;">Page Not Found</h2>
+        <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+            Oops! The page you're looking for doesn't exist. It might have been moved, deleted, or the URL might be incorrect.
+        </p>
+
+        <!-- Quick Links -->
+        <div class="card mb-4" style="background: var(--bg-dark); max-width: 600px; margin: 0 auto 3rem; text-align: left;">
+            <h3 style="margin-bottom: 1.5rem; text-align: center;">🧭 Where would you like to go?</h3>
+            <div style="display: grid; gap: 1rem;">
+                <a href="/" class="btn btn-secondary btn-block" style="text-decoration: none;">
+                    🏠 Home
+                </a>
+                <a href="/dashboard" class="btn btn-secondary btn-block" style="text-decoration: none;">
+                    📊 Dashboard
+                </a>
+                <a href="/search" class="btn btn-secondary btn-block" style="text-decoration: none;">
+                    🔍 Search Domains
+                </a>
+                <a href="/my-domains" class="btn btn-secondary btn-block" style="text-decoration: none;">
+                    📁 My Domains
+                </a>
+                <a href="/legacy/overview" class="btn btn-secondary btn-block" style="text-decoration: none;">
+                    🏛️ Legacy Planning
+                </a>
+            </div>
+        </div>
+
+        <!-- Search Box -->
+        <div style="max-width: 500px; margin: 0 auto 3rem;">
+            <h4 style="margin-bottom: 1rem;">Or search for a domain:</h4>
+            <form action="/search" method="GET">
+                <div class="flex gap-2">
+                    <input type="text" name="q" class="form-input" placeholder="Enter domain name..." style="flex: 1;">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Error Code for Debugging -->
+        <details style="max-width: 600px; margin: 0 auto; text-align: left;">
+            <summary style="cursor: pointer; color: var(--text-muted); font-size: 0.9rem; padding: 1rem;">
+                Technical Details (for debugging)
+            </summary>
+            <div style="background: var(--bg-dark); padding: 1rem; border-radius: 0.5rem; margin-top: 1rem; font-family: monospace; font-size: 0.85rem;">
+                <div><strong>Error Code:</strong> 404 Not Found</div>
+                <div><strong>Requested URL:</strong> {{ request.path }}</div>
+                <div><strong>Method:</strong> {{ request.method }}</div>
+                <div><strong>Timestamp:</strong> {{ now }}</div>
+            </div>
+        </details>
+    </div>
+
+    <!-- Help Section -->
+    <div class="card" style="background: var(--bg-dark); text-align: center;">
+        <h3 style="margin-bottom: 1rem;">Need Help?</h3>
+        <p class="text-muted" style="margin-bottom: 1.5rem;">
+            If you believe this is an error or need assistance, please contact our support team.
+        </p>
+        <div class="flex gap-2" style="justify-content: center;">
+            <button class="btn btn-secondary">Contact Support</button>
+            <a href="/docs" class="btn btn-outline">View Documentation</a>
+        </div>
+    </div>
+</div>
+
+<style>
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+.container > .card:first-child > div:first-child {
+    animation: float 3s ease-in-out infinite;
+}
+</style>
+{% endblock %}

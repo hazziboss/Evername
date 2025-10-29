@@ -1,0 +1,201 @@
+{% extends "base.html" %}
+
+{% block title %}Allocate Permissions - EverName{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1 class="card-title">⚖️ Delegate Permission Allocation</h1>
+            <p class="card-subtitle">Adjust ownership percentages and permissions for each delegate</p>
+        </div>
+
+        <!-- Allocation Overview -->
+        <div class="alert alert-info mb-4">
+            <div class="flex" style="justify-content: space-between; align-items: center;">
+                <span><strong>Total Allocation:</strong></span>
+                <span style="font-size: 1.5rem; font-weight: 700;" id="total-allocation">100%</span>
+            </div>
+            <div class="progress-container mt-2">
+                <div class="progress-bar" id="allocation-bar" style="width: 100%;"></div>
+            </div>
+        </div>
+
+        <form data-action="update-allocations">
+            <!-- Primary Delegate -->
+            <div class="card mb-4" style="background: var(--bg-dark);">
+                <div class="flex" style="justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                    <div>
+                        <h3 style="margin-bottom: 0.5rem;">👤 Primary Delegate</h3>
+                        <p class="text-muted" style="margin: 0;">Sarah Johnson (sarah.ever)</p>
+                    </div>
+                    <span class="badge badge-success">Active</span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Allocation Percentage</label>
+                    <input type="range" min="0" max="100" value="50" class="form-input allocation-slider" data-delegate="primary">
+                    <div class="flex" style="justify-content: center; margin-top: 1rem;">
+                        <span class="allocation-display" style="font-size: 2rem; font-weight: 700; color: var(--primary-light);">50%</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Permissions</label>
+                    <div style="display: grid; gap: 0.5rem;">
+                        <label class="flex" style="align-items: center; gap: 0.5rem;">
+                            <input type="checkbox" checked>
+                            <span>Full Domain Control</span>
+                        </label>
+                        <label class="flex" style="align-items: center; gap: 0.5rem;">
+                            <input type="checkbox" checked>
+                            <span>Wallet Access</span>
+                        </label>
+                        <label class="flex" style="align-items: center; gap: 0.5rem;">
+                            <input type="checkbox" checked>
+                            <span>NFT & Asset Transfer</span>
+                        </label>
+                        <label class="flex" style="align-items: center; gap: 0.5rem;">
+                            <input type="checkbox" checked>
+                            <span>Legacy Plan Modification</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Secondary Delegate -->
+            <div class="card mb-4" style="background: var(--bg-dark);">
+                <div class="flex" style="justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                    <div>
+                        <h3 style="margin-bottom: 0.5rem;">👤 Secondary Delegate</h3>
+                        <p class="text-muted" style="margin: 0;">Michael Chen (mchen.ever)</p>
+                    </div>
+                    <span class="badge badge-primary">Active</span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Allocation Percentage</label>
+                    <input type="range" min="0" max="100" value="30" class="form-input allocation-slider" data-delegate="secondary">
+                    <div class="flex" style="justify-content: center; margin-top: 1rem;">
+                        <span class="allocation-display" style="font-size: 2rem; font-weight: 700; color: var(--primary-light);">30%</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Permissions</label>
+                    <div style="display: grid; gap: 0.5rem;">
+                        <label class="flex" style="align-items: center; gap: 0.5rem;">
+                            <input type="checkbox" checked>
+                            <span>Full Domain Control</span>
+                        </label>
+                        <label class="flex" style="align-items: center; gap: 0.5rem;">
+                            <input type="checkbox" checked>
+                            <span>Wallet Access</span>
+                        </label>
+                        <label class="flex" style="align-items: center; gap: 0.5rem;">
+                            <input type="checkbox">
+                            <span>NFT & Asset Transfer</span>
+                        </label>
+                        <label class="flex" style="align-items: center; gap: 0.5rem;">
+                            <input type="checkbox">
+                            <span>Legacy Plan Modification</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tertiary Delegate -->
+            <div class="card mb-4" style="background: var(--bg-dark);">
+                <div class="flex" style="justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                    <div>
+                        <h3 style="margin-bottom: 0.5rem;">👤 Tertiary Delegate</h3>
+                        <p class="text-muted" style="margin: 0;">Emily Rodriguez (emily.ever)</p>
+                    </div>
+                    <span class="badge badge-primary">Active</span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Allocation Percentage</label>
+                    <input type="range" min="0" max="100" value="20" class="form-input allocation-slider" data-delegate="tertiary">
+                    <div class="flex" style="justify-content: center; margin-top: 1rem;">
+                        <span class="allocation-display" style="font-size: 2rem; font-weight: 700; color: var(--primary-light);">20%</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Permissions</label>
+                    <div style="display: grid; gap: 0.5rem;">
+                        <label class="flex" style="align-items: center; gap: 0.5rem;">
+                            <input type="checkbox">
+                            <span>Full Domain Control</span>
+                        </label>
+                        <label class="flex" style="align-items: center; gap: 0.5rem;">
+                            <input type="checkbox" checked>
+                            <span>Wallet Access (View Only)</span>
+                        </label>
+                        <label class="flex" style="align-items: center; gap: 0.5rem;">
+                            <input type="checkbox">
+                            <span>NFT & Asset Transfer</span>
+                        </label>
+                        <label class="flex" style="align-items: center; gap: 0.5rem;">
+                            <input type="checkbox">
+                            <span>Legacy Plan Modification</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Validation Alert -->
+            <div class="alert alert-warning mb-4" id="validation-alert" style="display: none;">
+                <strong>Warning:</strong> Total allocation must equal 100%. Current: <span id="current-total">100%</span>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex gap-2">
+                <button type="submit" class="btn btn-primary btn-large" id="save-btn">Save Changes</button>
+                <button type="button" class="btn btn-secondary" data-action="auto-balance">Auto-Balance</button>
+                <a href="/legacy/overview" class="btn btn-outline">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+const sliders = document.querySelectorAll('.allocation-slider');
+const totalDisplay = document.getElementById('total-allocation');
+const allocationBar = document.getElementById('allocation-bar');
+const saveBtn = document.getElementById('save-btn');
+const validationAlert = document.getElementById('validation-alert');
+
+sliders.forEach(slider => {
+    const display = slider.parentElement.querySelector('.allocation-display');
+    slider.addEventListener('input', () => {
+        display.textContent = slider.value + '%';
+        updateTotal();
+    });
+});
+
+function updateTotal() {
+    let total = 0;
+    sliders.forEach(slider => {
+        total += parseInt(slider.value);
+    });
+
+    totalDisplay.textContent = total + '%';
+    allocationBar.style.width = total + '%';
+
+    if (total === 100) {
+        allocationBar.style.background = 'var(--success-color)';
+        validationAlert.style.display = 'none';
+        saveBtn.disabled = false;
+    } else {
+        allocationBar.style.background = total > 100 ? 'var(--danger-color)' : 'var(--warning-color)';
+        validationAlert.style.display = 'block';
+        document.getElementById('current-total').textContent = total + '%';
+        saveBtn.disabled = true;
+    }
+}
+
+updateTotal();
+</script>
+{% endblock %}

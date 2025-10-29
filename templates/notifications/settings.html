@@ -1,0 +1,307 @@
+{% extends "base.html" %}
+
+{% block title %}Notification Settings - EverName{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1 class="card-title">🔔 Notification Settings</h1>
+            <p class="card-subtitle">Configure your notification preferences based on your Premium tier</p>
+        </div>
+
+        <!-- Current Tier Status -->
+        <div class="alert alert-info mb-4">
+            <div class="flex" style="justify-content: space-between; align-items: center;">
+                <div>
+                    <h3 style="margin-bottom: 0.5rem;">💎 Premium Tier - Full Notifications</h3>
+                    <p style="margin: 0; opacity: 0.9;">All notification channels available including priority alerts</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notification Channels -->
+        <div class="card mb-4" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1.5rem;">📬 Notification Channels</h3>
+            <form data-action="update-channels">
+                <div class="form-group">
+                    <label class="flex" style="align-items: center; gap: 1rem; cursor: pointer;">
+                        <input type="checkbox" checked style="width: 20px; height: 20px;">
+                        <div>
+                            <div style="font-weight: 600; margin-bottom: 0.25rem;">📧 Email Notifications</div>
+                            <div class="text-muted" style="font-size: 0.9rem;">Receive updates via email - john.doe@example.com</div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label class="flex" style="align-items: center; gap: 1rem; cursor: pointer;">
+                        <input type="checkbox" checked style="width: 20px; height: 20px;">
+                        <div>
+                            <div style="font-weight: 600; margin-bottom: 0.25rem;">📱 SMS Notifications</div>
+                            <div class="text-muted" style="font-size: 0.9rem;">Critical alerts via SMS - +1 (555) 123-4567</div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label class="flex" style="align-items: center; gap: 1rem; cursor: pointer;">
+                        <input type="checkbox" checked style="width: 20px; height: 20px;">
+                        <div>
+                            <div style="font-weight: 600; margin-bottom: 0.25rem;">🔔 Push Notifications</div>
+                            <div class="text-muted" style="font-size: 0.9rem;">Browser and mobile app push notifications</div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label class="flex" style="align-items: center; gap: 1rem; cursor: pointer;">
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                        <div>
+                            <div style="font-weight: 600; margin-bottom: 0.25rem;">📞 Phone Call Alerts <span class="badge badge-warning">Premium Only</span></div>
+                            <div class="text-muted" style="font-size: 0.9rem;">Emergency voice calls for critical legacy events</div>
+                        </div>
+                    </label>
+                </div>
+            </form>
+        </div>
+
+        <!-- Notification Types -->
+        <div class="card mb-4" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1.5rem;">🎯 Notification Types</h3>
+            <form data-action="update-types">
+                <!-- Domain Related -->
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="margin-bottom: 1rem; color: var(--primary-light);">Domain Management</h4>
+
+                    <div class="form-group">
+                        <label class="flex" style="justify-content: space-between; align-items: center;">
+                            <div>
+                                <div style="font-weight: 600;">Domain Expiration Warnings</div>
+                                <div class="text-muted" style="font-size: 0.9rem;">Alerts before domains expire</div>
+                            </div>
+                            <select class="form-select" style="width: 200px;">
+                                <option>All Channels</option>
+                                <option>Email Only</option>
+                                <option>SMS + Email</option>
+                                <option>Disabled</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="flex" style="justify-content: space-between; align-items: center;">
+                            <div>
+                                <div style="font-weight: 600;">Domain Renewal Success</div>
+                                <div class="text-muted" style="font-size: 0.9rem;">Confirmation of successful renewals</div>
+                            </div>
+                            <select class="form-select" style="width: 200px;">
+                                <option>Email Only</option>
+                                <option>All Channels</option>
+                                <option>SMS + Email</option>
+                                <option>Disabled</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="flex" style="justify-content: space-between; align-items: center;">
+                            <div>
+                                <div style="font-weight: 600;">New Domain Registration</div>
+                                <div class="text-muted" style="font-size: 0.9rem;">When new domains are registered</div>
+                            </div>
+                            <select class="form-select" style="width: 200px;">
+                                <option>Email Only</option>
+                                <option>All Channels</option>
+                                <option>SMS + Email</option>
+                                <option>Disabled</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Legacy & Liveness -->
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="margin-bottom: 1rem; color: var(--warning-color);">Legacy & Liveness</h4>
+
+                    <div class="form-group">
+                        <label class="flex" style="justify-content: space-between; align-items: center;">
+                            <div>
+                                <div style="font-weight: 600;">Inactivity Warnings</div>
+                                <div class="text-muted" style="font-size: 0.9rem;">Alerts when approaching inactivity threshold</div>
+                            </div>
+                            <select class="form-select" style="width: 200px;">
+                                <option>All Channels</option>
+                                <option>Email Only</option>
+                                <option>SMS + Email</option>
+                                <option>Disabled</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="flex" style="justify-content: space-between; align-items: center;">
+                            <div>
+                                <div style="font-weight: 600;">Grace Period Started</div>
+                                <div class="text-muted" style="font-size: 0.9rem;">Critical alert when grace period begins</div>
+                            </div>
+                            <select class="form-select" style="width: 200px;">
+                                <option>All Channels</option>
+                                <option>Email Only</option>
+                                <option>SMS + Email</option>
+                                <option>Disabled</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="flex" style="justify-content: space-between; align-items: center;">
+                            <div>
+                                <div style="font-weight: 600;">Legacy Execution Initiated</div>
+                                <div class="text-muted" style="font-size: 0.9rem;">When legacy transfer process starts</div>
+                            </div>
+                            <select class="form-select" style="width: 200px;">
+                                <option>All Channels</option>
+                                <option>Email Only</option>
+                                <option>SMS + Email</option>
+                                <option>Disabled</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="flex" style="justify-content: space-between; align-items: center;">
+                            <div>
+                                <div style="font-weight: 600;">Delegate Notifications</div>
+                                <div class="text-muted" style="font-size: 0.9rem;">When delegates are notified about legacy events</div>
+                            </div>
+                            <select class="form-select" style="width: 200px;">
+                                <option>Email Only</option>
+                                <option>All Channels</option>
+                                <option>SMS + Email</option>
+                                <option>Disabled</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Security -->
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="margin-bottom: 1rem; color: var(--danger-color);">Security</h4>
+
+                    <div class="form-group">
+                        <label class="flex" style="justify-content: space-between; align-items: center;">
+                            <div>
+                                <div style="font-weight: 600;">New Wallet Connected</div>
+                                <div class="text-muted" style="font-size: 0.9rem;">When a new wallet is linked to your account</div>
+                            </div>
+                            <select class="form-select" style="width: 200px;">
+                                <option>All Channels</option>
+                                <option>Email Only</option>
+                                <option>SMS + Email</option>
+                                <option>Disabled</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="flex" style="justify-content: space-between; align-items: center;">
+                            <div>
+                                <div style="font-weight: 600;">Account Changes</div>
+                                <div class="text-muted" style="font-size: 0.9rem;">Profile or security setting modifications</div>
+                            </div>
+                            <select class="form-select" style="width: 200px;">
+                                <option>All Channels</option>
+                                <option>Email Only</option>
+                                <option>SMS + Email</option>
+                                <option>Disabled</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="flex" style="justify-content: space-between; align-items: center;">
+                            <div>
+                                <div style="font-weight: 600;">Suspicious Activity</div>
+                                <div class="text-muted" style="font-size: 0.9rem;">Unusual login or transaction attempts</div>
+                            </div>
+                            <select class="form-select" style="width: 200px;">
+                                <option>All Channels</option>
+                                <option>Email Only</option>
+                                <option>SMS + Email</option>
+                                <option>Disabled</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- System Updates -->
+                <div>
+                    <h4 style="margin-bottom: 1rem; color: var(--success-color);">Platform Updates</h4>
+
+                    <div class="form-group">
+                        <label class="flex" style="justify-content: space-between; align-items: center;">
+                            <div>
+                                <div style="font-weight: 600;">Feature Announcements</div>
+                                <div class="text-muted" style="font-size: 0.9rem;">New features and improvements</div>
+                            </div>
+                            <select class="form-select" style="width: 200px;">
+                                <option>Email Only</option>
+                                <option>All Channels</option>
+                                <option>SMS + Email</option>
+                                <option>Disabled</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="flex" style="justify-content: space-between; align-items: center;">
+                            <div>
+                                <div style="font-weight: 600;">Maintenance Alerts</div>
+                                <div class="text-muted" style="font-size: 0.9rem;">Scheduled maintenance notifications</div>
+                            </div>
+                            <select class="form-select" style="width: 200px;">
+                                <option>Email Only</option>
+                                <option>All Channels</option>
+                                <option>SMS + Email</option>
+                                <option>Disabled</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Notification Schedule -->
+        <div class="card" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1.5rem;">⏰ Quiet Hours</h3>
+            <form data-action="update-schedule">
+                <div class="form-group">
+                    <label class="flex" style="align-items: center; gap: 1rem;">
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                        <span style="font-weight: 600;">Enable Quiet Hours</span>
+                    </label>
+                </div>
+                <div class="flex gap-3">
+                    <div class="form-group" style="flex: 1;">
+                        <label class="form-label">Start Time</label>
+                        <input type="time" class="form-input" value="22:00">
+                    </div>
+                    <div class="form-group" style="flex: 1;">
+                        <label class="form-label">End Time</label>
+                        <input type="time" class="form-input" value="08:00">
+                    </div>
+                </div>
+                <p class="text-muted" style="font-size: 0.9rem;">Non-critical notifications will be delayed during quiet hours. Emergency alerts will still be delivered.</p>
+            </form>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex gap-2 mt-4">
+            <button class="btn btn-primary" data-action="save-settings">Save Settings</button>
+            <a href="/contact-bind" class="btn btn-secondary">Manage Contacts</a>
+            <button class="btn btn-outline" data-action="test-notifications">Send Test Notification</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

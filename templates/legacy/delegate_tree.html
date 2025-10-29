@@ -1,0 +1,168 @@
+{% extends "base.html" %}
+
+{% block title %}Delegate Tree - EverName{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1 class="card-title">🌳 Multi-Delegate Tree View</h1>
+            <p class="card-subtitle">Visualize your complete delegation hierarchy</p>
+        </div>
+
+        <!-- Tree Visualization -->
+        <div class="card mb-4" style="background: var(--bg-dark); text-align: center; padding: 3rem;">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <!-- Owner -->
+                <div style="margin-bottom: 3rem;">
+                    <div style="display: inline-block; padding: 1.5rem 2rem; background: var(--gradient-1); border-radius: 1rem; color: white;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">👑</div>
+                        <div style="font-weight: 700; font-size: 1.2rem;">You (Owner)</div>
+                        <div style="opacity: 0.9; font-size: 0.9rem;">johndoe.ever</div>
+                    </div>
+                </div>
+
+                <!-- Connection Lines -->
+                <div style="height: 40px; position: relative;">
+                    <div style="position: absolute; top: 0; left: 50%; width: 2px; height: 100%; background: var(--border-color);"></div>
+                    <div style="position: absolute; top: 50%; left: 20%; right: 20%; height: 2px; background: var(--border-color);"></div>
+                </div>
+
+                <!-- Delegates -->
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 2rem;">
+                    <!-- Primary -->
+                    <div>
+                        <div style="height: 40px; width: 2px; background: var(--border-color); margin: 0 auto;"></div>
+                        <div style="padding: 1.5rem; background: var(--bg-card); border: 2px solid var(--success-color); border-radius: 1rem;">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">👤</div>
+                            <div style="font-weight: 600; margin-bottom: 0.25rem;">Sarah Johnson</div>
+                            <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">sarah.ever</div>
+                            <div class="badge badge-success">Primary</div>
+                            <div style="font-size: 1.5rem; font-weight: 700; color: var(--success-color); margin-top: 0.5rem;">50%</div>
+                        </div>
+                    </div>
+
+                    <!-- Secondary -->
+                    <div>
+                        <div style="height: 40px; width: 2px; background: var(--border-color); margin: 0 auto;"></div>
+                        <div style="padding: 1.5rem; background: var(--bg-card); border: 2px solid var(--primary-color); border-radius: 1rem;">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">👤</div>
+                            <div style="font-weight: 600; margin-bottom: 0.25rem;">Michael Chen</div>
+                            <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">mchen.ever</div>
+                            <div class="badge badge-primary">Secondary</div>
+                            <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary-light); margin-top: 0.5rem;">30%</div>
+                        </div>
+                    </div>
+
+                    <!-- Tertiary -->
+                    <div>
+                        <div style="height: 40px; width: 2px; background: var(--border-color); margin: 0 auto;"></div>
+                        <div style="padding: 1.5rem; background: var(--bg-card); border: 2px solid var(--text-muted); border-radius: 1rem;">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">👤</div>
+                            <div style="font-weight: 600; margin-bottom: 0.25rem;">Emily Rodriguez</div>
+                            <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">emily.ever</div>
+                            <div class="badge badge-primary">Tertiary</div>
+                            <div style="font-size: 1.5rem; font-weight: 700; color: var(--text-muted); margin-top: 0.5rem;">20%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detailed Breakdown -->
+        <div class="card mb-4" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1.5rem;">📊 Delegation Breakdown</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Delegate</th>
+                            <th>Level</th>
+                            <th>Allocation</th>
+                            <th>Permissions</th>
+                            <th>Status</th>
+                            <th>Added</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Sarah Johnson</strong><br>
+                                <span class="text-muted" style="font-size: 0.85rem;">sarah.ever</span>
+                            </td>
+                            <td><span class="badge badge-success">Primary</span></td>
+                            <td style="font-weight: 700; color: var(--success-color);">50%</td>
+                            <td>Full Control</td>
+                            <td><span class="badge badge-success">Accepted</span></td>
+                            <td>Oct 15, 2023</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Michael Chen</strong><br>
+                                <span class="text-muted" style="font-size: 0.85rem;">mchen.ever</span>
+                            </td>
+                            <td><span class="badge badge-primary">Secondary</span></td>
+                            <td style="font-weight: 700; color: var(--primary-light);">30%</td>
+                            <td>Manage Only</td>
+                            <td><span class="badge badge-success">Accepted</span></td>
+                            <td>Nov 5, 2023</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Emily Rodriguez</strong><br>
+                                <span class="text-muted" style="font-size: 0.85rem;">emily.ever</span>
+                            </td>
+                            <td><span class="badge badge-primary">Tertiary</span></td>
+                            <td style="font-weight: 700; color: var(--text-muted);">20%</td>
+                            <td>View Only</td>
+                            <td><span class="badge badge-success">Accepted</span></td>
+                            <td>Feb 15, 2024</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Asset Distribution -->
+        <div class="card" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1.5rem;">💼 Asset Distribution by Delegate</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <h4 style="margin-bottom: 1rem;">Sarah (50%)</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">✅ All 3 domains</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">✅ All 12 wallets</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">✅ NFT collection</li>
+                        <li style="padding: 0.5rem 0;">✅ Social profiles</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4 style="margin-bottom: 1rem;">Michael (30%)</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">✅ Domains 1 & 2</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">✅ All 12 wallets</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">❌ No NFT access</li>
+                        <li style="padding: 0.5rem 0;">✅ Social profiles</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4 style="margin-bottom: 1rem;">Emily (20%)</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">✅ Domain 1 only</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">✅ Wallets (view)</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">❌ No NFT access</li>
+                        <li style="padding: 0.5rem 0;">✅ Social profiles</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex gap-2 mt-4">
+            <a href="/legacy/allocate-permissions" class="btn btn-primary">Adjust Allocations</a>
+            <a href="/legacy/add-delegate" class="btn btn-secondary">Add Delegate</a>
+            <a href="/legacy/overview" class="btn btn-outline">Back to Overview</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

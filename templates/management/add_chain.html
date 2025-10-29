@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+
+{% block title %}Add Chain Resolver - EverName{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1 class="card-title">➕ Add Chain Resolver</h1>
+            <p class="card-subtitle">Connect a new blockchain wallet to johndoe.ever</p>
+        </div>
+
+        <!-- Select Chain -->
+        <div class="card mb-4" style="background: var(--bg-dark);">
+            <h3 style="margin-bottom: 1.5rem;">1️⃣ Select Blockchain</h3>
+            <div class="card-grid">
+                <label class="card" style="cursor: pointer; border: 2px solid var(--border-color);" data-chain="ethereum">
+                    <input type="radio" name="chain" value="ethereum" style="display: none;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 0.5rem;">🔷</div>
+                        <h4>Ethereum</h4>
+                        <p class="text-muted" style="font-size: 0.9rem;">EVM Compatible</p>
+                    </div>
+                </label>
+
+                <label class="card" style="cursor: pointer; border: 2px solid var(--border-color);" data-chain="polygon">
+                    <input type="radio" name="chain" value="polygon" style="display: none;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 0.5rem;">🟣</div>
+                        <h4>Polygon</h4>
+                        <p class="text-muted" style="font-size: 0.9rem;">EVM Compatible</p>
+                    </div>
+                </label>
+
+                <label class="card" style="cursor: pointer; border: 2px solid var(--border-color);" data-chain="solana">
+                    <input type="radio" name="chain" value="solana" style="display: none;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 0.5rem;">🌊</div>
+                        <h4>Solana</h4>
+                        <p class="text-muted" style="font-size: 0.9rem;">High Performance</p>
+                    </div>
+                </label>
+
+                <label class="card" style="cursor: pointer; border: 2px solid var(--border-color);" data-chain="sui">
+                    <input type="radio" name="chain" value="sui" style="display: none;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 0.5rem;">🌀</div>
+                        <h4>Sui</h4>
+                        <p class="text-muted" style="font-size: 0.9rem;">Move Language</p>
+                    </div>
+                </label>
+
+                <label class="card" style="cursor: pointer; border: 2px solid var(--border-color);" data-chain="aptos">
+                    <input type="radio" name="chain" value="aptos" style="display: none;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 0.5rem;">🅰️</div>
+                        <h4>Aptos</h4>
+                        <p class="text-muted" style="font-size: 0.9rem;">Move Language</p>
+                    </div>
+                </label>
+
+                <label class="card" style="cursor: pointer; border: 2px solid var(--border-color);" data-chain="bnb">
+                    <input type="radio" name="chain" value="bnb" style="display: none;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 0.5rem;">🟡</div>
+                        <h4>BNB Chain</h4>
+                        <p class="text-muted" style="font-size: 0.9rem;">EVM Compatible</p>
+                    </div>
+                </label>
+
+                <label class="card" style="cursor: pointer; border: 2px solid var(--border-color);" data-chain="arbitrum">
+                    <input type="radio" name="chain" value="arbitrum" style="display: none;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 0.5rem;">🔵</div>
+                        <h4>Arbitrum</h4>
+                        <p class="text-muted" style="font-size: 0.9rem;">L2 Scaling</p>
+                    </div>
+                </label>
+
+                <label class="card" style="cursor: pointer; border: 2px solid var(--border-color);" data-chain="optimism">
+                    <input type="radio" name="chain" value="optimism" style="display: none;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 0.5rem;">🔴</div>
+                        <h4>Optimism</h4>
+                        <p class="text-muted" style="font-size: 0.9rem;">L2 Scaling</p>
+                    </div>
+                </label>
+            </div>
+        </div>
+
+        <!-- Enter Wallet Address -->
+        <div class="card mb-4" style="background: var(--bg-dark);" id="wallet-form" style="display: none;">
+            <h3 style="margin-bottom: 1.5rem;">2️⃣ Enter Wallet Address</h3>
+            <form data-action="add-wallet">
+                <div class="form-group">
+                    <label class="form-label">Wallet Address</label>
+                    <input type="text" class="form-input" id="wallet-address" placeholder="Enter your wallet address...">
+                    <p class="text-muted" style="font-size: 0.85rem; margin-top: 0.5rem;" id="address-format">
+                        Format: 0x... (42 characters for EVM chains)
+                    </p>
+                </div>
+
+                <div class="alert alert-warning">
+                    <strong>Important:</strong> Make sure you control this wallet. You'll need to sign a message to verify ownership.
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-large">Verify Wallet</button>
+            </form>
+        </div>
+
+        <!-- Verify Ownership -->
+        <div class="card mb-4" style="background: var(--bg-dark); display: none;" id="verify-section">
+            <h3 style="margin-bottom: 1.5rem;">3️⃣ Verify Ownership</h3>
+            <div class="alert alert-info mb-3">
+                Sign the following message with your wallet to prove ownership:
+            </div>
+
+            <div style="background: var(--bg-card); padding: 1.5rem; border-radius: 0.5rem; border: 1px solid var(--border-color); margin-bottom: 1.5rem; font-family: monospace;">
+                I hereby confirm that I own this wallet and want to link it to johndoe.ever<br>
+                Timestamp: 2024-03-01T10:30:00Z<br>
+                Nonce: a7b3c9d5e1f2
+            </div>
+
+            <button class="btn btn-primary btn-large" data-action="sign-message">Sign Message in Wallet</button>
+        </div>
+
+        <!-- Success -->
+        <div class="card" style="background: var(--gradient-2); display: none;" id="success-section">
+            <div style="color: white; text-align: center; padding: 2rem;">
+                <div style="font-size: 4rem; margin-bottom: 1rem;">✅</div>
+                <h2 style="margin-bottom: 1rem;">Wallet Successfully Linked!</h2>
+                <p style="opacity: 0.9; margin-bottom: 2rem;">Your new wallet has been added to johndoe.ever</p>
+                <div class="flex gap-2" style="justify-content: center;">
+                    <a href="/linked-wallets?domain=johndoe" class="btn btn-large" style="background: white; color: var(--primary-dark);">View All Wallets</a>
+                    <a href="/add-chain?domain=johndoe" class="btn btn-outline btn-large" style="border-color: white; color: white;">Add Another</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.querySelectorAll('[data-chain]').forEach(card => {
+    card.addEventListener('click', () => {
+        document.querySelectorAll('[data-chain]').forEach(c => c.style.borderColor = 'var(--border-color)');
+        card.style.borderColor = 'var(--primary-color)';
+        document.getElementById('wallet-form').style.display = 'block';
+
+        const chain = card.dataset.chain;
+        const formatText = document.getElementById('address-format');
+        if (chain === 'solana') {
+            formatText.textContent = 'Format: Base58 encoded address (32-44 characters)';
+        } else {
+            formatText.textContent = 'Format: 0x... (42 characters for EVM chains)';
+        }
+    });
+});
+</script>
+{% endblock %}

@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+
+{% block title %}Checkout - EverName{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1 class="card-title">🛒 Checkout</h1>
+            <p class="card-subtitle">Complete your domain registration</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;">
+            <!-- Left Column - Registration Details -->
+            <div>
+                <!-- Domain Summary -->
+                <div class="card mb-4" style="background: var(--bg-dark);">
+                    <h3 style="margin-bottom: 1.5rem;">📋 Registration Details</h3>
+                    <div class="flex" style="justify-content: space-between; align-items: center; padding: 1.5rem; background: var(--bg-card); border-radius: 0.5rem; margin-bottom: 1rem;">
+                        <div>
+                            <h2 style="margin: 0; margin-bottom: 0.5rem;">johndoe.ever</h2>
+                            <p class="text-muted" style="margin: 0;">Standard domain • 7 characters</p>
+                        </div>
+                        <div style="text-align: right;">
+                            <div style="font-size: 2rem; font-weight: 700; color: var(--primary-light);">$8.50</div>
+                            <div class="text-muted" style="text-decoration: line-through;">$10.00</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Registration Period -->
+                <div class="card mb-4" style="background: var(--bg-dark);">
+                    <h3 style="margin-bottom: 1.5rem;">📅 Registration Period</h3>
+                    <form>
+                        <div class="form-group">
+                            <label class="form-label">Select registration period</label>
+                            <select class="form-select" id="registration-period">
+                                <option value="1">1 Year - $8.50</option>
+                                <option value="2">2 Years - $17.00 (Save 0%)</option>
+                                <option value="3">3 Years - $25.50 (Save 0%)</option>
+                                <option value="5">5 Years - $42.50 (Save 0%)</option>
+                            </select>
+                        </div>
+                        <div class="alert alert-info">
+                            💡 <strong>Tip:</strong> Register for multiple years to lock in your price and avoid renewal hassles
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Payment Method -->
+                <div class="card mb-4" style="background: var(--bg-dark);">
+                    <h3 style="margin-bottom: 1.5rem;">💳 Payment Method</h3>
+                    <form>
+                        <div class="form-group">
+                            <label class="flex" style="align-items: center; gap: 1rem; padding: 1rem; border: 2px solid var(--primary-color); border-radius: 0.5rem; cursor: pointer; background: rgba(99, 102, 241, 0.1);">
+                                <input type="radio" name="payment" value="algo" checked style="width: 20px; height: 20px;">
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">⚡ Pay with ALGO</div>
+                                    <div class="text-muted" style="font-size: 0.9rem;">Fast & secure blockchain payment</div>
+                                </div>
+                                <div style="font-weight: 700; color: var(--primary-light);">8.5 ALGO</div>
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="flex" style="align-items: center; gap: 1rem; padding: 1rem; border: 2px solid var(--border-color); border-radius: 0.5rem; cursor: pointer;">
+                                <input type="radio" name="payment" value="usdc" style="width: 20px; height: 20px;">
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">💵 Pay with USDC</div>
+                                    <div class="text-muted" style="font-size: 0.9rem;">Stablecoin payment option</div>
+                                </div>
+                                <div style="font-weight: 700;">$8.50 USDC</div>
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="flex" style="align-items: center; gap: 1rem; padding: 1rem; border: 2px solid var(--border-color); border-radius: 0.5rem; cursor: pointer;">
+                                <input type="radio" name="payment" value="nil" style="width: 20px; height: 20px;">
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">🪙 Pay with NIL Tokens</div>
+                                    <div class="text-muted" style="font-size: 0.9rem;">Use your NIL tokens for payment</div>
+                                </div>
+                                <div style="font-weight: 700;">850 NIL</div>
+                            </label>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Additional Options -->
+                <div class="card mb-4" style="background: var(--bg-dark);">
+                    <h3 style="margin-bottom: 1.5rem;">⚙️ Additional Options</h3>
+                    <div class="form-group">
+                        <label class="flex" style="align-items: center; gap: 1rem; cursor: pointer;">
+                            <input type="checkbox" checked style="width: 20px; height: 20px;">
+                            <div>
+                                <div style="font-weight: 600; margin-bottom: 0.25rem;">Auto-renew domain</div>
+                                <div class="text-muted" style="font-size: 0.9rem;">Automatically renew before expiration (recommended)</div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="flex" style="align-items: center; gap: 1rem; cursor: pointer;">
+                            <input type="checkbox" checked style="width: 20px; height: 20px;">
+                            <div>
+                                <div style="font-weight: 600; margin-bottom: 0.25rem;">Privacy protection</div>
+                                <div class="text-muted" style="font-size: 0.9rem;">Hide your wallet address from public view (Free)</div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Order Summary -->
+            <div>
+                <div class="card" style="background: var(--bg-dark); position: sticky; top: 100px;">
+                    <h3 style="margin-bottom: 1.5rem;">📊 Order Summary</h3>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <div class="flex" style="justify-content: space-between; padding: 0.75rem 0; border-bottom: 1px solid var(--border-color);">
+                            <span>Domain (1 year)</span>
+                            <span style="font-weight: 600;">$10.00</span>
+                        </div>
+                        <div class="flex" style="justify-content: space-between; padding: 0.75rem 0; border-bottom: 1px solid var(--border-color);">
+                            <span>NIL Discount (15%)</span>
+                            <span style="font-weight: 600; color: var(--success-color);">-$1.50</span>
+                        </div>
+                        <div class="flex" style="justify-content: space-between; padding: 0.75rem 0; border-bottom: 1px solid var(--border-color);">
+                            <span>Privacy Protection</span>
+                            <span style="font-weight: 600; color: var(--success-color);">FREE</span>
+                        </div>
+                        <div class="flex" style="justify-content: space-between; padding: 0.75rem 0; border-bottom: 1px solid var(--border-color);">
+                            <span class="text-muted">Network Fee</span>
+                            <span style="font-weight: 600;">$0.001</span>
+                        </div>
+                    </div>
+
+                    <div style="background: var(--bg-card); padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 1.5rem;">
+                        <div class="flex" style="justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                            <span style="font-size: 1.2rem; font-weight: 600;">Total</span>
+                            <span style="font-size: 2rem; font-weight: 700; color: var(--primary-light);">$8.50</span>
+                        </div>
+                        <div class="flex" style="justify-content: space-between; align-items: center;">
+                            <span class="text-muted" style="font-size: 0.9rem;">You save</span>
+                            <span style="font-weight: 600; color: var(--success-color);">$1.50</span>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary btn-large btn-block mb-3" data-action="complete-purchase">
+                        Complete Purchase
+                    </button>
+
+                    <div class="alert alert-info" style="font-size: 0.85rem;">
+                        🔒 Secure transaction powered by Algorand blockchain
+                    </div>
+
+                    <!-- Promo Code -->
+                    <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
+                        <h4 style="margin-bottom: 1rem; font-size: 1rem;">🎟️ Have a promo code?</h4>
+                        <div class="flex gap-2">
+                            <input type="text" class="form-input" placeholder="Enter code" style="flex: 1;">
+                            <button class="btn btn-secondary">Apply</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Terms -->
+        <div class="card mt-4" style="background: var(--bg-dark);">
+            <label class="flex" style="align-items: flex-start; gap: 1rem; cursor: pointer;">
+                <input type="checkbox" required style="width: 20px; height: 20px; margin-top: 0.25rem;">
+                <div style="font-size: 0.9rem;">
+                    I agree to the <a href="#" style="color: var(--primary-light);">Terms of Service</a> and <a href="#" style="color: var(--primary-light);">Domain Registration Agreement</a>. I understand that domain registrations are non-refundable and subject to renewal fees.
+                </div>
+            </label>
+        </div>
+    </div>
+</div>
+{% endblock %}

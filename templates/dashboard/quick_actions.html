@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Quick Actions - EverName{% endblock %}
+{% block content %}
+<div class="container" style="max-width: 900px;">
+    <h1 style="margin-bottom: 2rem;">Quick Actions</h1>
+    <div class="card-grid">
+        <div class="card" style="text-align: center;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">🔍</div>
+            <h3>Search Domains</h3>
+            <p style="color: var(--text-secondary); margin: 1rem 0;">Find and register your perfect .ever domain</p>
+            <a href="/search" class="btn btn-primary btn-block">Search Now</a>
+        </div>
+        <div class="card" style="text-align: center;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">⚙️</div>
+            <h3>Manage Domains</h3>
+            <p style="color: var(--text-secondary); margin: 1rem 0;">View and edit your existing domains</p>
+            <a href="/my-domains" class="btn btn-primary btn-block">Manage</a>
+        </div>
+        <div class="card" style="text-align: center;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">🔗</div>
+            <h3>Link Wallet</h3>
+            <p style="color: var(--text-secondary); margin: 1rem 0;">Connect additional blockchain addresses</p>
+            <a href="/cross-chain-summary" class="btn btn-primary btn-block">Add Chain</a>
+        </div>
+        <div class="card" style="text-align: center;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">👥</div>
+            <h3>Add Delegate</h3>
+            <p style="color: var(--text-secondary); margin: 1rem 0;">Set up legacy delegation for your assets</p>
+            <a href="/legacy/add-delegate" class="btn btn-primary btn-block">Add Delegate</a>
+        </div>
+        <div class="card" style="text-align: center;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">💳</div>
+            <h3>Renew Subscription</h3>
+            <p style="color: var(--text-secondary); margin: 1rem 0;">Extend your domain registrations</p>
+            <a href="/subscription" class="btn btn-primary btn-block">Renew</a>
+        </div>
+        <div class="card" style="text-align: center;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">✅</div>
+            <h3>Confirm Liveness</h3>
+            <p style="color: var(--text-secondary); margin: 1rem 0;">Update your activity status</p>
+            <a href="/liveness/im-alive" class="btn btn-success btn-block">I'm Alive</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

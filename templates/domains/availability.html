@@ -1,0 +1,158 @@
+{% extends "base.html" %}
+
+{% block title %}Domain Availability - EverName{% endblock %}
+
+{% block content %}
+<div class="container">
+    <!-- Search Again -->
+    <div class="card mb-4">
+        <form data-action="search-domain">
+            <div class="flex gap-2">
+                <input type="text" class="form-input" placeholder="Search another domain..." value="johndoe" style="flex: 1;">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Main Result -->
+    <div class="card mb-4" style="background: var(--gradient-2);">
+        <div style="text-align: center; color: white; padding: 2rem;">
+            <div style="font-size: 4rem; margin-bottom: 1rem;">✅</div>
+            <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem;">johndoe.ever is Available!</h1>
+            <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 2rem;">Secure this domain before someone else does</p>
+
+            <div style="background: rgba(255, 255, 255, 0.2); border-radius: 1rem; padding: 2rem; backdrop-filter: blur(10px); max-width: 500px; margin: 0 auto;">
+                <div class="flex" style="justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <span style="font-size: 1.2rem;">Registration Price:</span>
+                    <span style="font-size: 2rem; font-weight: 700;">$10/year</span>
+                </div>
+                <div class="flex" style="justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                    <span>NIL Token Discount (15%):</span>
+                    <span style="font-size: 1.2rem; font-weight: 600; color: #fbbf24;">-$1.50</span>
+                </div>
+                <div style="border-top: 2px solid rgba(255, 255, 255, 0.3); padding-top: 1rem; margin-bottom: 1.5rem;">
+                    <div class="flex" style="justify-content: space-between; align-items: center;">
+                        <span style="font-size: 1.3rem; font-weight: 600;">Your Price:</span>
+                        <span style="font-size: 2.5rem; font-weight: 700;">$8.50</span>
+                    </div>
+                </div>
+                <a href="/checkout?domain=johndoe" class="btn btn-large btn-block" style="background: white; color: var(--primary-dark);">Register Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alternative Suggestions -->
+    <div class="card mb-4">
+        <h3 style="margin-bottom: 1.5rem;">💡 Similar Available Domains</h3>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Domain</th>
+                        <th>Price/Year</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="font-weight: 600;">john-doe.ever</td>
+                        <td>$8.50 <span class="text-muted" style="text-decoration: line-through;">$10.00</span></td>
+                        <td><span class="badge badge-success">Available</span></td>
+                        <td><a href="/checkout?domain=john-doe" class="btn btn-primary" style="padding: 0.5rem 1rem;">Register</a></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600;">jdoe.ever</td>
+                        <td>$85.00 <span class="text-muted" style="text-decoration: line-through;">$100.00</span></td>
+                        <td><span class="badge badge-warning">Premium</span></td>
+                        <td><a href="/checkout?domain=jdoe" class="btn btn-primary" style="padding: 0.5rem 1rem;">Register</a></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600;">johndoe123.ever</td>
+                        <td>$8.50 <span class="text-muted" style="text-decoration: line-through;">$10.00</span></td>
+                        <td><span class="badge badge-success">Available</span></td>
+                        <td><a href="/checkout?domain=johndoe123" class="btn btn-primary" style="padding: 0.5rem 1rem;">Register</a></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600;">thejohndoe.ever</td>
+                        <td>$8.50 <span class="text-muted" style="text-decoration: line-through;">$10.00</span></td>
+                        <td><span class="badge badge-success">Available</span></td>
+                        <td><a href="/checkout?domain=thejohndoe" class="btn btn-primary" style="padding: 0.5rem 1rem;">Register</a></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600;">johndoeofficial.ever</td>
+                        <td>$8.50 <span class="text-muted" style="text-decoration: line-through;">$10.00</span></td>
+                        <td><span class="badge badge-success">Available</span></td>
+                        <td><a href="/checkout?domain=johndoeofficial" class="btn btn-primary" style="padding: 0.5rem 1rem;">Register</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Domain Info -->
+    <div class="card-grid">
+        <div class="card">
+            <h3 style="margin-bottom: 1rem;">📊 Domain Details</h3>
+            <div style="margin-bottom: 1rem;">
+                <div class="flex" style="justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+                    <span class="text-muted">Length:</span>
+                    <span style="font-weight: 600;">7 characters</span>
+                </div>
+                <div class="flex" style="justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+                    <span class="text-muted">Type:</span>
+                    <span style="font-weight: 600;">Standard</span>
+                </div>
+                <div class="flex" style="justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+                    <span class="text-muted">Category:</span>
+                    <span style="font-weight: 600;">Personal Name</span>
+                </div>
+                <div class="flex" style="justify-content: space-between; padding: 0.5rem 0;">
+                    <span class="text-muted">Popularity:</span>
+                    <span style="font-weight: 600;">High</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3 style="margin-bottom: 1rem;">✨ What You Get</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+                    ✅ Full ownership control
+                </li>
+                <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+                    ✅ Multi-chain wallet linking
+                </li>
+                <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+                    ✅ Social profile integration
+                </li>
+                <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+                    ✅ Legacy planning features
+                </li>
+                <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+                    ✅ Decentralized storage
+                </li>
+                <li style="padding: 0.5rem 0;">
+                    ✅ Transfer & sell rights
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Unavailable Example (commented out, shown when domain is taken) -->
+    <!--
+    <div class="card mb-4" style="background: rgba(239, 68, 68, 0.1); border: 2px solid var(--danger-color);">
+        <div style="text-align: center; padding: 2rem;">
+            <div style="font-size: 4rem; margin-bottom: 1rem;">❌</div>
+            <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem; color: var(--danger-color);">johndoe.ever is Taken</h1>
+            <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2rem;">This domain was registered on Jan 15, 2023</p>
+
+            <div class="flex gap-2" style="justify-content: center;">
+                <button class="btn btn-secondary">View Owner Info</button>
+                <button class="btn btn-outline">Set Price Alert</button>
+            </div>
+        </div>
+    </div>
+    -->
+</div>
+{% endblock %}

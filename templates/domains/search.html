@@ -1,0 +1,172 @@
+{% extends "base.html" %}
+
+{% block title %}Search Domains - EverName{% endblock %}
+
+{% block content %}
+<div class="container">
+    <!-- Hero Search Section -->
+    <div class="hero">
+        <h1 class="hero-title">Find Your Perfect Domain</h1>
+        <p class="hero-subtitle">Search for available .ever domains and secure your decentralized identity</p>
+
+        <form data-action="search-domain" style="max-width: 600px; margin: 2rem auto 0;">
+            <div class="flex gap-2">
+                <input type="text" class="form-input" placeholder="Enter domain name..." style="flex: 1; font-size: 1.1rem; padding: 1rem 1.5rem;">
+                <button type="submit" class="btn btn-primary btn-large">Search</button>
+            </div>
+            <p class="text-muted mt-2" style="font-size: 0.9rem;">
+                Examples: johndoe, mycompany, crypto-enthusiast
+            </p>
+        </form>
+    </div>
+
+    <!-- Search Tips -->
+    <div class="card mb-4">
+        <h3 style="margin-bottom: 1.5rem;">💡 Domain Search Tips</h3>
+        <div class="card-grid">
+            <div class="card" style="background: var(--bg-dark);">
+                <h4 style="margin-bottom: 0.5rem;">✅ Valid Characters</h4>
+                <p class="text-muted">Letters (a-z), numbers (0-9), and hyphens (-)</p>
+            </div>
+            <div class="card" style="background: var(--bg-dark);">
+                <h4 style="margin-bottom: 0.5rem;">📏 Length Requirements</h4>
+                <p class="text-muted">Minimum 3 characters, maximum 63 characters</p>
+            </div>
+            <div class="card" style="background: var(--bg-dark);">
+                <h4 style="margin-bottom: 0.5rem;">⚡ Instant Search</h4>
+                <p class="text-muted">Real-time availability checking</p>
+            </div>
+            <div class="card" style="background: var(--bg-dark);">
+                <h4 style="margin-bottom: 0.5rem;">💎 Premium Names</h4>
+                <p class="text-muted">Short names (1-4 chars) available at premium pricing</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popular Searches -->
+    <div class="card mb-4">
+        <h3 style="margin-bottom: 1.5rem;">🔥 Trending Searches</h3>
+        <div class="flex gap-2" style="flex-wrap: wrap;">
+            <button class="btn btn-secondary" data-search="crypto">crypto</button>
+            <button class="btn btn-secondary" data-search="defi">defi</button>
+            <button class="btn btn-secondary" data-search="nft">nft</button>
+            <button class="btn btn-secondary" data-search="web3">web3</button>
+            <button class="btn btn-secondary" data-search="dao">dao</button>
+            <button class="btn btn-secondary" data-search="metaverse">metaverse</button>
+            <button class="btn btn-secondary" data-search="blockchain">blockchain</button>
+            <button class="btn btn-secondary" data-search="algorand">algorand</button>
+        </div>
+    </div>
+
+    <!-- Domain Categories -->
+    <div class="card">
+        <h3 style="margin-bottom: 1.5rem;">🎯 Browse by Category</h3>
+        <div class="card-grid">
+            <a href="/marketplace?category=personal" class="card" style="background: var(--bg-dark); text-decoration: none; cursor: pointer;">
+                <div style="font-size: 2rem; margin-bottom: 0.5rem;">👤</div>
+                <h4 style="margin-bottom: 0.5rem;">Personal Names</h4>
+                <p class="text-muted">First names, last names, full names</p>
+            </a>
+            <a href="/marketplace?category=business" class="card" style="background: var(--bg-dark); text-decoration: none; cursor: pointer;">
+                <div style="font-size: 2rem; margin-bottom: 0.5rem;">💼</div>
+                <h4 style="margin-bottom: 0.5rem;">Business</h4>
+                <p class="text-muted">Company names, brands, services</p>
+            </a>
+            <a href="/marketplace?category=crypto" class="card" style="background: var(--bg-dark); text-decoration: none; cursor: pointer;">
+                <div style="font-size: 2rem; margin-bottom: 0.5rem;">₿</div>
+                <h4 style="margin-bottom: 0.5rem;">Crypto & Web3</h4>
+                <p class="text-muted">DeFi, NFT, blockchain related</p>
+            </a>
+            <a href="/marketplace?category=short" class="card" style="background: var(--bg-dark); text-decoration: none; cursor: pointer;">
+                <div style="font-size: 2rem; margin-bottom: 0.5rem;">⚡</div>
+                <h4 style="margin-bottom: 0.5rem;">Short Domains</h4>
+                <p class="text-muted">Premium 1-4 character domains</p>
+            </a>
+            <a href="/marketplace?category=numbers" class="card" style="background: var(--bg-dark); text-decoration: none; cursor: pointer;">
+                <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔢</div>
+                <h4 style="margin-bottom: 0.5rem;">Number Domains</h4>
+                <p class="text-muted">Numeric and alphanumeric</p>
+            </a>
+            <a href="/marketplace?category=premium" class="card" style="background: var(--bg-dark); text-decoration: none; cursor: pointer;">
+                <div style="font-size: 2rem; margin-bottom: 0.5rem;">💎</div>
+                <h4 style="margin-bottom: 0.5rem;">Premium Names</h4>
+                <p class="text-muted">Curated high-value domains</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- Recent Registrations -->
+    <div class="card mt-4">
+        <h3 style="margin-bottom: 1.5rem;">⚡ Recently Registered</h3>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Domain</th>
+                        <th>Registered</th>
+                        <th>Length</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="font-weight: 600;">cryptowhale.ever</td>
+                        <td>5 minutes ago</td>
+                        <td>11 chars</td>
+                        <td><span class="badge badge-primary">Standard</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600;">nftcollector.ever</td>
+                        <td>12 minutes ago</td>
+                        <td>12 chars</td>
+                        <td><span class="badge badge-primary">Standard</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600;">defi.ever</td>
+                        <td>18 minutes ago</td>
+                        <td>4 chars</td>
+                        <td><span class="badge badge-warning">Premium</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600;">blockchain-dev.ever</td>
+                        <td>25 minutes ago</td>
+                        <td>14 chars</td>
+                        <td><span class="badge badge-primary">Standard</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600;">web3builder.ever</td>
+                        <td>32 minutes ago</td>
+                        <td>11 chars</td>
+                        <td><span class="badge badge-primary">Standard</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Pricing Info -->
+    <div class="card mt-4" style="background: var(--gradient-1);">
+        <div style="text-align: center; color: white;">
+            <h3 style="margin-bottom: 1rem;">💰 Transparent Pricing</h3>
+            <div class="stats-grid">
+                <div>
+                    <div style="font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem;">$10/year</div>
+                    <div style="opacity: 0.9;">Standard Domains (5+ chars)</div>
+                </div>
+                <div>
+                    <div style="font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem;">$100/year</div>
+                    <div style="opacity: 0.9;">Premium Domains (3-4 chars)</div>
+                </div>
+                <div>
+                    <div style="font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem;">$1000/year</div>
+                    <div style="opacity: 0.9;">Ultra Premium (1-2 chars)</div>
+                </div>
+                <div>
+                    <div style="font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem;">Up to 15%</div>
+                    <div style="opacity: 0.9;">NIL Token Discount</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
